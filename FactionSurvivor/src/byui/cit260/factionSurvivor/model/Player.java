@@ -16,10 +16,14 @@ public class Player implements Serializable{
     
     private String name;
     private double bestTime;
+    private String inventItem;
+        //inventory up to this point
+    private int challComplete;
+        //number of challenges completed
 
      public Player() {
     }
-     
+
     public String getName() {
         return name;
     }
@@ -36,18 +40,37 @@ public class Player implements Serializable{
     public void setBestTime(double bestTime) {
         this.bestTime = bestTime;
     }
+    
+    public String getInventItem() {
+        return inventItem;
+    }
 
+    public void setInventItem(String inventItem) {
+        this.inventItem = inventItem;
+    }
+
+    public int getChallComplete() {
+        return challComplete;
+    }
+
+    public void setChallComplete(int challComplete) {
+        this.challComplete = challComplete;
+    }
+     
    
     
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", bestTime=" + bestTime + '}';
+        return "Player{" + "name=" + name + ", bestTime=" + bestTime + "inventItem=" + inventItem + "challComplete=" + challComplete + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
+        hash = 71 * hash + Objects.hashCode(this.name);
+        hash = 71 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
+        hash = 71 * hash + Objects.hashCode(this.inventItem);
+        hash = 71 * hash + this.challComplete;
         return hash;
     }
 
@@ -60,12 +83,21 @@ public class Player implements Serializable{
             return false;
         }
         final Player other = (Player) obj;
-        
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
         if (Double.doubleToLongBits(this.bestTime) != Double.doubleToLongBits(other.bestTime)) {
+            return false;
+        }
+        if (!Objects.equals(this.inventItem, other.inventItem)) {
+            return false;
+        }
+        if (this.challComplete != other.challComplete) {
             return false;
         }
         return true;
     }
+
     
     
 }
