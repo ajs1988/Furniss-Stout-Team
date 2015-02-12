@@ -10,9 +10,9 @@ package byui.cit260.factionSurvivor.control;
  * @author Andy
  */
 public class SafeCrackerControl {
-    private boolean calc1(int length, int width, int height) {
-        double totalV = length * width * height;
-        return totalV == 495;
+    public int calc1(int length, int width, int height) {
+        int totalV = length * width * height;
+        return totalV;
     }
     
     private boolean clac2(double playCalc2){
