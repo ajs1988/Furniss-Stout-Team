@@ -20,6 +20,8 @@ public class SafeCrackerControlTest {
     @Test
     public void testCalc1() {
         System.out.println("testCalc1");
+        // *Test case # 1
+        System.out.println("\tTest case #1");
         int length = 5;
         int width = 11;
         int height = 9;
@@ -29,7 +31,26 @@ public class SafeCrackerControlTest {
         int result = instance.calc1(length, width, height);
         assertEquals(expResult, result, 0);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+    }
+
+    /**
+     *
+     */
+    public void testCalc2() {
+        System.out.println("testCalc1");
+        // *Test case # 2
+        System.out.println("\tTest case #2");
+        int length = -5;
+        int width = 11;
+        int height = 9;
+        int totalV = 495;
+        int expResult = -1;
+        SafeCrackerControl instance = new SafeCrackerControl();
+        int result = instance.calc1(length, width, height);
+        assertEquals(expResult, result, 0);
+        // TODO review the generated test code and remove the default call to fail.
+        
     }
     
 }

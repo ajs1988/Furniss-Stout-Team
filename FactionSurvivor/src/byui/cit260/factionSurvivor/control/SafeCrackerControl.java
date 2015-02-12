@@ -11,6 +11,15 @@ package byui.cit260.factionSurvivor.control;
  */
 public class SafeCrackerControl {
     public int calc1(int length, int width, int height) {
+        if (length < 0) {
+            return -1;
+        }
+        if (width < 0) {
+            return -1;
+        }
+        if (height < 0) {
+            return -1;
+        }
         int totalV = length * width * height;
         return totalV;
     }
