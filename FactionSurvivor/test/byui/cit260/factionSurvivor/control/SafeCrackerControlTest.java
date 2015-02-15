@@ -18,7 +18,7 @@ public class SafeCrackerControlTest {
     }
 
     @Test
-    public void testCalc1() {
+    public void testCalc1A() {
         System.out.println("testCalc1");
         // *Test case # 1
         System.out.println("\tTest case #1");
@@ -37,7 +37,8 @@ public class SafeCrackerControlTest {
     /**
      *
      */
-    public void testCalc2() {
+    @Test
+    public void testCalc1B() {
         System.out.println("testCalc1");
         // *Test case # 2
         System.out.println("\tTest case #2");
@@ -49,8 +50,19 @@ public class SafeCrackerControlTest {
         SafeCrackerControl instance = new SafeCrackerControl();
         int result = instance.calc1(length, width, height);
         assertEquals(expResult, result, 0);
-        // TODO review the generated test code and remove the default call to fail.
+    }     // TODO review the generated test code and remove the default call to fail.
         
+    @Test
+    public void testClac2A() {
+        System.out.println("testCalc1");
+        // *Test case # 2
+        System.out.println("\tTest case #1");
+        double playCalc2 = 40.5;
+            boolean check = true;
+        boolean expResult = true;
+        SafeCrackerControl instance = new SafeCrackerControl();
+        boolean result = instance.clac2(check);
+        assertTrue(true);
     }
     
 }

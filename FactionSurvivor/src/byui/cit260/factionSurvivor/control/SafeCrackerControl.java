@@ -24,12 +24,13 @@ public class SafeCrackerControl {
         return totalV;
     }
     
-    private boolean clac2(double playCalc2){
-            return playCalc2 == 40.5;
-    }
+    private boolean clac2(int playCalc2){
+            if (playCalc2 == 40.5) {
+                boolean check = true;
+                return check; }
     
     private boolean clac3(int playCalc3) {
-        return playCalc3 == 50;
+        return playCalc3 == 75.6;
         
     }
 }
