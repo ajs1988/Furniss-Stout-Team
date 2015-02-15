@@ -10,5 +10,9 @@ package byui.cit260.factionSurvivor.control;
  * @author Andy
  */
 public class ZiplineControl {
+    public boolean zipLine(int harness, int rope, int brake, int anchor){
+        
+        return harness == 1 && rope == 1 && brake == 1 && anchor == 1;
+    }
+    }
     
-}

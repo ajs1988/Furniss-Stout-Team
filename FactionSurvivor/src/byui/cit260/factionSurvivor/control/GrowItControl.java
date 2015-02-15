@@ -10,8 +10,8 @@ package byui.cit260.factionSurvivor.control;
  * @author Andy
  */
 public class GrowItControl {
-    private boolean groIt(int seed, int sunlight, int water, int soil){
-        return seed == 10 && sunlight == 11 && water == 12 && soil == 13;
+    public boolean groIt(int seed, int sunlight, int water, int soil){
+        return seed == 1 && sunlight == 1 && water == 1 && soil == 1;
         
     }
 }
