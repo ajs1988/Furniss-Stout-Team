@@ -13,6 +13,13 @@ public class ServiceControl {
     int ans = 6;
     
     public boolean serviceFood(int per1, int per2, int per3, int daunt, int factLess){
+        if (daunt < 224 || daunt > 224){
+            return false;
+        }
+        if (factLess < 1344 || factLess > 1344) {
+            return false;
+        }
+        
         if (per1 == 1 && per2 == 1 && per3 == 1){
             int da1 = 7 * 32;
             int fa1 = da1 * 6;
