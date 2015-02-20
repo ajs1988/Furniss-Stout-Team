@@ -18,6 +18,7 @@ import byui.cit260.factionSurvivor.model.Safe_Cracker;
 import byui.cit260.factionSurvivor.model.Scene;
 import byui.cit260.factionSurvivor.model.Service;
 import byui.cit260.factionSurvivor.model.Zipline;
+import byui.cit260.factionSurvivor.view.StartProgram;
 
 /**
  *
@@ -29,7 +30,12 @@ public class FactionSurvivor {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    
+        //start program view
+        
+        StartProgram startProgram = new StartProgram();
+        startProgram.startProgram1();
+        
+       //connections to other model layer sections
         Player player1 = new Player();
         Game game = new Game();
         Actor actor = new Actor();
@@ -137,6 +143,7 @@ public class FactionSurvivor {
         
         String ziplineInfo = zipline.toString();
         System.out.println(ziplineInfo);
+
     }
 
    
