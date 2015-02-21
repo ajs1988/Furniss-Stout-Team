@@ -10,5 +10,12 @@ package byui.cit260.factionSurvivor.control;
  * @author Andy
  */
 public class Cell1Control {
-    
+    public int escapeSequence(int keypress) {
+        if (keypress != 1) {
+            return -1;
+        }
+        else {
+            return 1;
+        }
+}
 }

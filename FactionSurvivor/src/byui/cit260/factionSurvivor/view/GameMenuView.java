@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.factionSurvivor.control;
+package byui.cit260.factionSurvivor.view;
 
 /**
  *
- * @author Andy
+ * @author Landon
  */
-public class MapControl {
+public class GameMenuView {
 
+    void displayMenu() {
+        System.out.println("\n*** displayMenu stub function called ***");
+    }
+    
 }

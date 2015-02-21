@@ -24,13 +24,20 @@ public class SafeCrackerControl {
         return totalV;
     }
     
-    private boolean clac2(int playCalc2){
-            if (playCalc2 == 40.5) {
-                boolean check = true;
-                return check; }
+    boolean clac2(double playCalc2){
+                return playCalc2 == 40.5; }
     
-    private boolean clac3(int playCalc3) {
-        return playCalc3 == 75.6;
+    double clac3(double celsius) {
+        // F = 9/5 (C + 32)
+        // 10 degrees Cesius to Farenheit?
+        if (celsius != 10) {
+            return -1;
+        }
+        else {
+        double farenheit = 9/5 * (celsius + 32);  
+        return 10;
+        }
+
         
-    }
+}
 }

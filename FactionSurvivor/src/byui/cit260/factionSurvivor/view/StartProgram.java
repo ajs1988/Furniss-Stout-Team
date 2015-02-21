@@ -25,12 +25,15 @@ public class StartProgram {
             String playerName = this.getPlayerName();
             
         //Create and save the player object
-            Player player = ProgramControl.createPlayer(playersName);
+            Player player1 = ProgramControl.createPlayer(playerName);
         
         //Display a personalized welcome message
-            this.displayWelcomeMessage(player);
+            this.displayWelcomeMessage(player1);
             
         //Display the Main Menu.
+            
+            MainMenuView mainMenu = new MainMenuView();
+            mainMenu.displayMenu();
 }
 
     private void displayBanner() {
@@ -74,7 +77,7 @@ public class StartProgram {
             System.out.println("Enter the player's name below:");
             
             //get the name from the keyboard and trim off the blanks
-            playersName = keyboard.nextline();
+            playersName = keyboard.nextLine();
             playersName = playersName.trim();
             
             //if the name is invalid (less than two character in length)
@@ -88,9 +91,9 @@ public class StartProgram {
         return playersName;
     }
     
-    public void displayWelcomeMessage(Player player) {
+    public void displayWelcomeMessage(Player player1) {
         System.out.println("\n\n========================================");
-        System.out.println("\tWelcome to the game " + player.getName());
+        System.out.println("\tWelcome to the game " + player1.getName());
         System.out.println("\tWe hope you have a lot of fun!");
         System.out.println("============================================");
         

@@ -26,6 +26,24 @@ import byui.cit260.factionSurvivor.view.StartProgram;
  */
 public class FactionSurvivor {
 
+    private static Game currentGame = null;
+    private static Player player1 = null;
+    
+        public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        FactionSurvivor.currentGame = currentGame;
+    }
+
+    public static Player getPlayer1() {
+        return player1;
+    }
+
+    public static void setPlayer1(Player player1) {
+        FactionSurvivor.player1 = player1;
+    }
     /**
      * @param args the command line arguments
      */
