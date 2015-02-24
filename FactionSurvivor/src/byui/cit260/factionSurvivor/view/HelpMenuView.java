@@ -12,45 +12,48 @@ import java.util.Scanner;
  * @author Landon
  */
 public class HelpMenuView {
-        private final String MENU = "\n"
-            +"\n-----------------------------------"
-            +"\n| Help Menu                       |"
-            +"\n-----------------------------------"
-            +"\nG - What is the Goal?"
-            +"\nM - How to Move"
-            +"\nK - Key Items"
-            +"\nI - Inventory Help"
-            +"\nE - Exit to Main Menu"
-            +"\n-----------------------------------";
-       void displayHelpMenu() {
+
+    private final String MENU = "\n"
+            + "\n-----------------------------------"
+            + "\n| Help Menu                       |"
+            + "\n-----------------------------------"
+            + "\nG - What is the Goal?"
+            + "\nM - How to Move"
+            + "\nK - Key Items"
+            + "\nI - Inventory Help"
+            + "\nE - Exit to Main Menu"
+            + "\n-----------------------------------";
+
+    void displayHelpMenu() {
         char selection = ' ';
         do {
-            
+
             System.out.println(MENU); // display the main menu
-            
+
             String input = this.getInput(); // get the user's selection
             selection = input.charAt(0); // get first character of string
-            
+
             this.doAction(selection); // do action based on selection
-            
+
         } while (selection != 'E'); // a selection is not "Exit"
     }
-        public String getInput() {
+
+    public String getInput() {
         boolean valid = false; //indicates if the name has been retrived
         String userInput = null;
         Scanner keyboard = new Scanner(System.in); //keyboard input stream
-        
+
         while (!valid) {//while a valid name has not been retrieved
-            
+
             // prompt for the player's name
             System.out.println("Enter input:");
-            
+
             //get the name from the keyboard and trim off the blanks
             userInput = keyboard.nextLine();
             userInput = userInput.trim();
-            
-        if (userInput.length() < 1 ) {
-            System.out.println("Please enter a value");
+
+            if (userInput.length() < 1) {
+                System.out.println("Please enter a value");
                 continue;
             }
             break;
@@ -58,7 +61,8 @@ public class HelpMenuView {
         return userInput;
 
     }
-        public void doAction(char choice) {
+
+    public void doAction(char choice) {
         switch (choice) {
             case 'G': // what is the goal?
                 this.displayGoal();
@@ -77,17 +81,18 @@ public class HelpMenuView {
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
-}
+    }
 
     private void displayGoal() {
         System.out.println("*** displayGoal() string ***");
     }
 
     private void displayMoveInstruct() {
-        System.out.println("*** displayMoveInstruct() string ***");    }
+        System.out.println("*** displayMoveInstruct() string ***");
+    }
 
     private void displayListKey() {
-       System.out.println("*** displayListKey() string ***");
+        System.out.println("*** displayListKey() string ***");
     }
 
     private void displayInventoryHelp() {

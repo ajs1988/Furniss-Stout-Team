@@ -12,10 +12,11 @@ import byui.cit260.factionSurvivor.model.Player;
  * @author Landon
  */
 public class ProgramControl {
+
     public static Player createPlayer(String playersname) {
         Player player1 = new Player();
         player1.setName(playersname);
-        
+
         return player1;
 
 //        System.out.prinln("\n***** createPlayer function called *****");
