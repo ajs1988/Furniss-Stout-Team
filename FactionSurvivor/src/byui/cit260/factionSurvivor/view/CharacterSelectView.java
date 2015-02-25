@@ -23,7 +23,7 @@ public class CharacterSelectView {
             +"\nN - Natalie (the Mother)"            
             +"\nE - Exit to Main Menu"
             +"\n----------------------------------------";
-       void displayHelpMenu() {
+       void displayCharMenu() {
         char selection = ' ';
         do {
             

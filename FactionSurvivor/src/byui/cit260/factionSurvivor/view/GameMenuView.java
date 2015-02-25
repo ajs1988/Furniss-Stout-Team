@@ -84,7 +84,7 @@ public class GameMenuView {
     }
 
     private void displayCharMenu() {
-        CharacterSelectView characterSelectView = new characterSelectView();
+        CharacterSelectView characterSelectView = new CharacterSelectView();
         characterSelectView.displayCharMenu();
     }
 
