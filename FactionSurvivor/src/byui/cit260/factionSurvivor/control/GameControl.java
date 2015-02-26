@@ -12,6 +12,7 @@ import byui.cit260.factionSurvivor.model.Player;
  * @author Andy
  */
 public class GameControl {
+
     public static void createNewGame(Player player) {
         System.out.println("\n*** createNewGame stub function called ***");
     }

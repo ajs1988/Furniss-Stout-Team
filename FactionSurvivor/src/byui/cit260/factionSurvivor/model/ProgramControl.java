@@ -14,15 +14,15 @@ import factionsurvivor.FactionSurvivor;
 public class ProgramControl {
 
     public static Player createPlayer(String playerName) {
-        if (playerName==null) {
+        if (playerName == null) {
             return null;
         }
         Player player1 = new Player();
         player1.setName(playerName);
-        
+
         FactionSurvivor.setPlayer1(player1); // save the player
-        
+
         return player1;
     }
-    
+
 }
