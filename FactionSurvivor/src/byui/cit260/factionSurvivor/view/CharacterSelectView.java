@@ -23,7 +23,7 @@ public class CharacterSelectView {
             +"\nN - Natalie (the Mother)"            
             +"\nE - Exit to Main Menu"
             +"\n----------------------------------------";
-       void displayHelpMenu() {
+       void displayCharMenu() {
         char selection = ' ';
         do {
             
@@ -43,10 +43,10 @@ public class CharacterSelectView {
         
         while (!valid) {//while a valid name has not been retrieved
             
-            // prompt for the player's name
+            // prompt for the Player's input
             System.out.println("Enter input:");
             
-            //get the name from the keyboard and trim off the blanks
+            //get the input from the keyboard and trim off the blanks
             userInput = keyboard.nextLine();
             userInput = userInput.trim();
             
@@ -63,6 +63,7 @@ public class CharacterSelectView {
         switch (choice) {
             case 'T': // Show character selection Tris
                 this.displayTris();
+                
                 break;
             case 'F': // Show Character Selection Four
                 this.displayFour();
@@ -85,7 +86,7 @@ public class CharacterSelectView {
 
     private void displayTris() {
         System.out.println("*** displayTris() string ***");    }
-
+            
     private void displayFour() {
         System.out.println("*** displayFour() string ***");
     }
