@@ -10,5 +10,6 @@ package byui.cit260.factionSurvivor.control;
  * @author Andy
  */
 public class MapControl {
+    
 
 }
