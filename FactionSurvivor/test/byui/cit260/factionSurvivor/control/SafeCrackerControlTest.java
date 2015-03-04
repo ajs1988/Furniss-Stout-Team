@@ -71,30 +71,49 @@ public class SafeCrackerControlTest {
         assertFalse(resultCalc2);
     }
 
-        @Test
+       
+       @Test
         public void testClac3A() {
         System.out.println("testCalc3");
         // *Test case # 2
         System.out.println("\tTest case #3A");
-        double playCalc3 = 75.6;
-        boolean expResult = true;
+        double celsius = 10;
+        double farenheit = 75.6;
+        double expResult = 75.6;
         SafeCrackerControl instance = new SafeCrackerControl();
-        boolean resultCalc3 = instance.clac3(playCalc3);
-        assertTrue(resultCalc3);
+        double resultClac3 = instance.clac3(farenheit);
+        assertEquals(expResult, resultClac3);
     }
         @Test
         public void testClac3B() {
-        System.out.println("testCalc2");
+        System.out.println("testCalc3");
         // *Test case # 2
         System.out.println("\tTest case #3B");
-        double playCalc2 = 77.3;
-        boolean expResult = false;
+        double farenheit = 77.3;
+        double expResult = 75.6;
         SafeCrackerControl instance = new SafeCrackerControl();
-        boolean resultCalc3 = instance.clac2(playCalc2);
-        assertFalse(resultCalc3);
+        double resultClac3 = instance.clac3(farenheit);
+        assertEquals(expResult, resultClac3);
     }
-    private void asserttrue(boolean resultCalc2, boolean resultCalc3) {
-    }  
-    private void assertfalse(boolean resultCalc2,boolean resultCalc3) {
+        @Test
+        public void testClac3C() {
+        System.out.println("testCalc3");
+        // *Test case # 2
+        System.out.println("\tTest case # 3C");
+        double celsius = 5;
+        double expResult = -1;
+        SafeCrackerControl instance = new SafeCrackerControl();
+        double resultClac3 = instance.clac3(celsius);
+        assertEquals(expResult, resultClac3);
         }
+        
+    private void asserttrue(boolean resultCalc2) {
+    }  
+    private void assertfalse(boolean resultCalc2) {
+        }
+    private void assertEquals(double expResult, double resultClac3) {
+    }
+    private void assertEquals(int expResult, int result, int i) {
+    }
+
 }
