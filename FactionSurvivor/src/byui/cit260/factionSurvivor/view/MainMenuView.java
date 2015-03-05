@@ -6,6 +6,7 @@
 package byui.cit260.factionSurvivor.view;
 
 import byui.cit260.factionSurvivor.control.GameControl;
+import byui.cit260.factionSurvivor.view.ViewInterfaceClass.View;
 import factionsurvivor.FactionSurvivor;
 import java.util.Scanner;
 
@@ -13,9 +14,10 @@ import java.util.Scanner;
  *
  * @author Landon
  */
-public class MainMenuView {
-
-    private final String MENU = "\n"
+public class MainMenuView extends View{
+    
+    public MainMenuView() {
+     super("\n"
             + "\n-----------------------------------"
             + "\n| Main Menu                       |"
             + "\n-----------------------------------"
@@ -24,44 +26,19 @@ public class MainMenuView {
             + "\nC - Continue from saved game"
             + "\nS - Save Game"
             + "\nE - Exit"
-            + "\n-----------------------------------";
-
-    void displayMenu() {
-        char selection = ' ';
-        do {
-
-            System.out.println(MENU); // display the main menu
-
-            String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0); // get first character of string
-
-            this.doAction(selection); // do action based on selection
-
-        } while (selection != 'E'); // a selection is not "Exit"
-    }
-
-    public String getInput() {
-        boolean valid = false; //indicates if the name has been retrived
-        String userInput = null;
-        Scanner keyboard = new Scanner(System.in); //keyboard input stream
-
-        while (!valid) {//while a valid name has not been retrieved
-
-            // prompt for the player's name
-            System.out.println("Enter input:");
-
-            //get the name from the keyboard and trim off the blanks
-            userInput = keyboard.nextLine();
-            userInput = userInput.trim();
-
-            if (userInput.length() < 1) {
-                System.out.println("Please enter a value");
-                continue;
-            }
-            break;
+            + "\n-----------------------------------");
         }
-        return userInput;
+    @Override
+    public boolean doAction(Object obj) {
+        
+        String value = (String) obj;
+        
+        value = value.toUpperCase();
+        char choice = value.charAt(0);
+        
     }
+
+    
 
     public void doAction(char choice) {
         switch (choice) {
@@ -105,6 +82,11 @@ public class MainMenuView {
 
     private void saveGame() {
         System.out.println("*** displayHelpMenu function called ***");
+    }
+
+    @Override
+    public void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
