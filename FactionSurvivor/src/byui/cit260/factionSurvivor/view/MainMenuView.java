@@ -6,7 +6,6 @@
 package byui.cit260.factionSurvivor.view;
 
 import byui.cit260.factionSurvivor.control.GameControl;
-import byui.cit260.factionSurvivor.view.ViewInterfaceClass.View;
 import factionsurvivor.FactionSurvivor;
 import java.util.Scanner;
 
@@ -14,9 +13,9 @@ import java.util.Scanner;
  *
  * @author Landon
  */
-public class MainMenuView extends View{
-    
-    public MainMenuView() {
+public class MainMenuView extends View {
+
+    public MainMenuView(){
      super("\n"
             + "\n-----------------------------------"
             + "\n| Main Menu                       |"
@@ -27,14 +26,15 @@ public class MainMenuView extends View{
             + "\nS - Save Game"
             + "\nE - Exit"
             + "\n-----------------------------------");
-        }
+    }
     @Override
-    public boolean doAction(Object obj) {
+    public boolean doAction(Object obj){
         
         String value = (String) obj;
         
         value = value.toUpperCase();
         char choice = value.charAt(0);
+        return false;
         
     }
 
@@ -82,11 +82,6 @@ public class MainMenuView extends View{
 
     private void saveGame() {
         System.out.println("*** displayHelpMenu function called ***");
-    }
-
-    @Override
-    public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
