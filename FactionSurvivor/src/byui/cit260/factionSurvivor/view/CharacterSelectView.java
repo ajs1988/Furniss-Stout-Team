@@ -27,17 +27,13 @@ public class CharacterSelectView extends View {
             +"\n----------------------------------------");
        
     }
+    @Override
     public boolean doAction(Object obj){
         
         String value = (String) obj;
         
         value = value.toUpperCase();
         char choice = value.charAt(0);
-        return false;
-        
-    }
-        
-        public void doAction(char choice) {
         switch (choice) {
             case 'T': // Show character selection Tris
                 this.displayTris();
@@ -55,11 +51,12 @@ public class CharacterSelectView extends View {
             case 'N': // Show Character Selection Natalie
                 this.displayNatalie();
             case 'E': // Exit to previous menu
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
+        return false;
 }
 
     private void displayTris() {

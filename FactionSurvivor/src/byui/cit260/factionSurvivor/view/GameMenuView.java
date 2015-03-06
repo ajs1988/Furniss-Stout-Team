@@ -25,20 +25,13 @@ public class GameMenuView extends View {
             + "\nE - Exit"
             + "\n-----------------------------------");
     }
+    @Override
     public boolean doAction(Object obj){
         
         String value = (String) obj;
         
         value = value.toUpperCase();
         char choice = value.charAt(0);
-        return false;
-        
-    }
-    
-
-   
-
-    public void doAction(char choice) {
         switch (choice) {
             case 'C': // Open character select menu
                 this.displayCharMenu();
@@ -52,11 +45,12 @@ public class GameMenuView extends View {
             case 'S': // Search the current location
                 this.searchLocation();
             case 'E': // Exit to main menu
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
+        return false;
     }
 
     private void displayCharMenu() {

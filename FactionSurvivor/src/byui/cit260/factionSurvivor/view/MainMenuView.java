@@ -9,6 +9,7 @@ import byui.cit260.factionSurvivor.control.GameControl;
 import factionsurvivor.FactionSurvivor;
 import java.util.Scanner;
 
+
 /**
  *
  * @author Landon
@@ -27,20 +28,17 @@ public class MainMenuView extends View {
             + "\nE - Exit"
             + "\n-----------------------------------");
     }
-    @Override
+    
+
+    
+
+   @Override
     public boolean doAction(Object obj){
         
         String value = (String) obj;
         
         value = value.toUpperCase();
         char choice = value.charAt(0);
-        return false;
-        
-    }
-
-    
-
-    public void doAction(char choice) {
         switch (choice) {
             case 'G': // create and start a new game
                 this.startNewGame();
@@ -54,11 +52,12 @@ public class MainMenuView extends View {
             case 'S': // save the current game
                 this.saveGame();
             case 'E': // Exit the program
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
+        return false;
     }
 
     private void startNewGame() {

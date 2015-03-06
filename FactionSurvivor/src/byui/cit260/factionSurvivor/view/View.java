@@ -22,6 +22,7 @@ public abstract class View implements ViewInterface {
     
     
     public void display() {
+        
         String value= "";
         boolean done = false;
         

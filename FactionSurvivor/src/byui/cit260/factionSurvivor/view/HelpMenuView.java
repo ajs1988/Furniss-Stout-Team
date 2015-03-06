@@ -29,16 +29,10 @@ public class HelpMenuView extends View {
     @Override
     public boolean doAction(Object obj){
         
-        String value = (String)obj;
+        String value = (String) obj;
         
         value = value.toUpperCase();
         char choice = value.charAt(0);
-        return false;
-        
-    }
-    
-
-    public void doAction(char choice) {
         switch (choice) {
             case 'G': // what is the goal?
                 this.displayGoal();
@@ -52,11 +46,12 @@ public class HelpMenuView extends View {
             case 'I': // save the current game
                 this.displayInventoryHelp();
             case 'E': // Exit to main menu
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
+        return false;
     }
 
     private void displayGoal() {
