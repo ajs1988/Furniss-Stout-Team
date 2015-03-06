@@ -63,7 +63,8 @@ public class GameMenuView extends View {
     }
 
     private void viewInventory() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        InventoryView inventoryView = new InventoryView();
+        inventoryView.display();
     }
 
     private void searchLocation() {
