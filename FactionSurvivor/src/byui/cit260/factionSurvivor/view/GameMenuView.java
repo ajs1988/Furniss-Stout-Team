@@ -11,9 +11,10 @@ import java.util.Scanner;
  *
  * @author Landon
  */
-public class GameMenuView {
+public class GameMenuView extends View {
     
-        private final String MENU = "\n"
+    public GameMenuView(){
+        super("\n"
             + "\n-----------------------------------"
             + "\n| Game Menu                       |"
             + "\n-----------------------------------"
@@ -22,45 +23,20 @@ public class GameMenuView {
             + "\nV - View Inventory"
             + "\nS - Search Location"
             + "\nE - Exit"
-            + "\n-----------------------------------";
-
-
-    void displayGameMenu() {
-            char selection = ' ';
-        do {
-
-            System.out.println(MENU); // display the main menu
-
-            String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0); // get first character of string
-
-            this.doAction(selection); // do action based on selection
-
-        } while (selection != 'E'); // a selection is not "Exit"
+            + "\n-----------------------------------");
     }
-
-    public String getInput() {
-        boolean valid = false; //indicates if the name has been retrived
-        String userInput = null;
-        Scanner keyboard = new Scanner(System.in); //keyboard input stream
-
-        while (!valid) {//while a valid name has not been retrieved
-
-            // prompt for the player's name
-            System.out.println("Enter input:");
-
-            //get the name from the keyboard and trim off the blanks
-            userInput = keyboard.nextLine();
-            userInput = userInput.trim();
-
-            if (userInput.length() < 1) {
-                System.out.println("Please enter a value");
-                continue;
-            }
-            break;
-        }
-        return userInput;
+    public boolean doAction(Object obj){
+        
+        String value = (String) obj;
+        
+        value = value.toUpperCase();
+        char choice = value.charAt(0);
+        return false;
+        
     }
+    
+
+   
 
     public void doAction(char choice) {
         switch (choice) {
@@ -85,7 +61,7 @@ public class GameMenuView {
 
     private void displayCharMenu() {
         CharacterSelectView characterSelectView = new CharacterSelectView();
-        characterSelectView.displayCharMenu();
+        characterSelectView.display();
     }
 
     private void moveToLocation() {

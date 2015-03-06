@@ -66,13 +66,13 @@ public class MainMenuView extends View {
         GameControl.createNewGame(FactionSurvivor.getPlayer1());
         // display the game menu
         GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenu();
+        gameMenuView.display();
         //  System.out.println("*** startNewGame function called ***");
     }
 
     private void displayHelpMenu() {
         HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenu();
+        helpMenuView.display();
         // System.out.println("*** startExistingGame function called ***");
     }
 
