@@ -8,7 +8,7 @@ package factionsurvivor;
 import byui.cit260.factionSurvivor.model.Actor;
 import byui.cit260.factionSurvivor.model.Game;
 import byui.cit260.factionSurvivor.model.GrowIt;
-import byui.cit260.factionSurvivor.model.Inventory;
+import byui.cit260.factionSurvivor.model.InventoryItem;
 import byui.cit260.factionSurvivor.model.Location;
 import byui.cit260.factionSurvivor.model.Map;
 import byui.cit260.factionSurvivor.model.Player;
@@ -60,7 +60,7 @@ public class FactionSurvivor {
         Actor actor = new Actor();
         Map map = new Map();
         Location location = new Location();
-        Inventory inventory = new Inventory();
+        InventoryItem inventory = new InventoryItem();
         PrisonCell prisonCell = new PrisonCell();
         GrowIt growIt = new GrowIt();
         Safe_Cracker safe_Cracker = new Safe_Cracker();

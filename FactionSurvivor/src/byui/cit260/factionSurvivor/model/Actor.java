@@ -5,6 +5,7 @@
  */
 package byui.cit260.factionSurvivor.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -12,47 +13,41 @@ import java.util.Objects;
  *
  * @author Landon
  */
-public class Actor implements Serializable{
+public enum Actor implements Serializable {
     
-    private String actor;
+    EruditePrisoner ("Erudite in cell 1"),
+    DauntlessPrisoner ("Dauntless in cell 1"),
+    PrisonGuard ("Guard in cell 2"),
+    Jeremy ("Amity member"),
+    Cassie ("Amity member"),
+    Billy ("Amity child"),
+    DauntlessMembers ("The Dauntless group of people"),
+    DauntlessOpponent ("Fighting opponent for Dauntless challenge"),
+    AbnegationLeader ("Leader of Abnegation faction"),
+    ServicePeople ("People you serve in Abnegation challenge");
 
-    public Actor() {
-    }
-    
-    public String getActor() {
-        return actor;
+    private final String description;
+    private final Point coordinates;
+
+    Actor(String description) {
+    this.description = description;
+    coordinates = new Point (1,1);
+}
+
+    public String getDescription() {
+        return description;
     }
 
-    public void setActor(String actor) {
-        this.actor = actor;
+    public Point getCoordinates() {
+        return coordinates;
     }
+}
 
     @Override
     public String toString() {
         return "Actor{" + "actor=" + actor + '}';
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 13 * hash + Objects.hashCode(this.actor);
-        return hash;
-    }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Actor other = (Actor) obj;
-        if (!Objects.equals(this.actor, other.actor)) {
-            return false;
-        }
-        return true;
-    }
-    
-    
+
 }

@@ -12,14 +12,11 @@ import java.util.Objects;
  *
  * @author Landon
  */
-public class Inventory implements Serializable{
+public class InventoryItem implements Serializable{
     private String inventoryType;
     private int quantityInStock;
     private int requiredAmount;
     private String keyItem;
-
-    public Inventory() {
-    }
 
     
     public String getInventoryType() {
@@ -77,7 +74,7 @@ public class Inventory implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Inventory other = (Inventory) obj;
+        final InventoryItem other = (InventoryItem) obj;
         if (!Objects.equals(this.inventoryType, other.inventoryType)) {
             return false;
         }

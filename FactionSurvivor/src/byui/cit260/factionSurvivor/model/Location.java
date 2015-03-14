@@ -6,6 +6,7 @@
 package byui.cit260.factionSurvivor.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,6 +17,24 @@ public class Location implements Serializable{
     private int column;
     private int explored;
     private int amountRemaining;
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public ArrayList<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(ArrayList<Actor> actors) {
+        this.actors = actors;
+    }
+    private Scene scene;
+    private ArrayList<Actor> actors;
 
     public Location() {
     }
