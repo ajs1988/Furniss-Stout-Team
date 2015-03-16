@@ -15,7 +15,27 @@ import java.util.Objects;
 public class Actor implements Serializable{
     
     private String actor;
+    private String description;
+    private Point coordinates;
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Point getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(Point coordinates) {
+        this.coordinates = coordinates;
+    }
+
+    
+    
     public Actor() {
     }
     
