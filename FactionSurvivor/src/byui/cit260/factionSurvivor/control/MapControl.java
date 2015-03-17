@@ -5,6 +5,9 @@
  */
 package byui.cit260.factionSurvivor.control;
 
+import byui.cit260.factionSurvivor.model.Scene;
+
+
 /**
  *
  * @author Andy

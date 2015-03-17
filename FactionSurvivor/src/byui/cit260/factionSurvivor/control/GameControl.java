@@ -8,7 +8,9 @@ package byui.cit260.factionSurvivor.control;
 import byui.cit260.factionSurvivor.model.Game;
 import byui.cit260.factionSurvivor.model.InventoryItem;
 import byui.cit260.factionSurvivor.model.Item;
+import byui.cit260.factionSurvivor.model.Location;
 import byui.cit260.factionSurvivor.model.Player;
+import byui.cit260.factionSurvivor.model.Scene;
 import byui.cit260.factionSurvivor.model.sceneType;
 import factionsurvivor.FactionSurvivor;
 
@@ -165,7 +167,25 @@ public class GameControl {
         
     }
     public static InventoryItem[] getSortedInventoryList() {
-        System.out.println("\n*** getSortedInventoryList stub function called ***");
-        return null;
+        // get inventory list for the current game
+        InventoryItem[] originalInventoryList =
+                FactionSurvivor.getCurrentGame().getInventory();
+        
+        // clone (make a copy) originallist
+        InventoryItem[] inventoryList = originalInventoryList.clone();
+        
+        // using a BubbleSort to sort the list of inventoryList by name
+        InventoryItem tempInventoryItem;
+        for (int i = 0; i< inventoryList.length-1; i++) {
+            for (int j = 0; j < inventoryList.length-1-i; j++) {
+                if (inventoryList[j].getDescription().
+                        compareToIgnoreCase(inventoryList[j+1].getDescription())>0) {
+                    tempInventoryItem = inventoryList[j];
+                    inventoryList[j] = inventoryList[j+1];
+                    inventoryList[j+1] = tempInventoryItem;
+                }
+            }
+        }
+        return inventoryList;
     }
 }

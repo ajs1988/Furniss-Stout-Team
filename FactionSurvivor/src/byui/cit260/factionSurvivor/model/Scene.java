@@ -23,7 +23,7 @@ public class Scene implements Serializable{
     private double travelT;
         //travel time
     
-    private static Scene[] createScenes() throws MapControlException {
+    public static Scene[] createScenes() throws MapControlException {
         Game game = FactionSurvivor.getCurrentGame();
         
         Scene[] scenes = new Scene[Constants.NUMBER_OF_SCENES];

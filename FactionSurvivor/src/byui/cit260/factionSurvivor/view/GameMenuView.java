@@ -5,6 +5,8 @@
  */
 package byui.cit260.factionSurvivor.view;
 
+import byui.cit260.factionSurvivor.control.GameControl;
+import byui.cit260.factionSurvivor.model.InventoryItem;
 import java.util.Scanner;
 
 /**
@@ -25,7 +27,6 @@ public class GameMenuView extends View {
             + "\nE - Exit"
             + "\n-----------------------------------");
     }
-    @Override
     public boolean doAction(Object obj){
         
         String value = (String) obj;
@@ -58,7 +59,7 @@ public class GameMenuView extends View {
         characterSelectView.display();
     }
 
-    private void diplayMap() {
+    private void displayMap() {
         System.out.println("*** displayMap stub function called ***");
     }
 
