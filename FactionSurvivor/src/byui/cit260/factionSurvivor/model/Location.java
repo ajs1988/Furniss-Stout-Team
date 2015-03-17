@@ -15,8 +15,10 @@ import java.util.ArrayList;
 public class Location implements Serializable{
     private int row;
     private int column;
-    private int explored;
+    private boolean explored;
     private int amountRemaining;
+    private Scene scene;
+    private ArrayList<Actor> actors;
 
     public Scene getScene() {
         return scene;
@@ -33,9 +35,6 @@ public class Location implements Serializable{
     public void setActors(ArrayList<Actor> actors) {
         this.actors = actors;
     }
-    private Scene scene;
-    private ArrayList<Actor> actors;
-
     public Location() {
     }
 
@@ -55,11 +54,11 @@ public class Location implements Serializable{
         this.column = column;
     }
 
-    public int getExplored() {
+    public boolean getExplored() {
         return explored;
     }
 
-    public void setExplored(int explored) {
+    public void setExplored(boolean explored) {
         this.explored = explored;
     }
 
@@ -79,10 +78,10 @@ public class Location implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 47 * hash + this.row;
-        hash = 47 * hash + this.column;
-        hash = 47 * hash + this.explored;
-        hash = 47 * hash + this.amountRemaining;
+        hash = 97 * hash + this.row;
+        hash = 97 * hash + this.column;
+        hash = 97 * hash + (this.explored ? 1 : 0);
+        hash = 97 * hash + this.amountRemaining;
         return hash;
     }
 

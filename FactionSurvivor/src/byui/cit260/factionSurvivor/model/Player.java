@@ -14,6 +14,7 @@ import java.util.Objects;
  */
 public class Player implements Serializable{
     
+    private Game[] game;
     private String name;
     private double bestTime;
     private String inventItem;

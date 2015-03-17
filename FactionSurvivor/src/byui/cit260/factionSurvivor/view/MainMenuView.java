@@ -64,8 +64,8 @@ public class MainMenuView extends View {
         // create a new game
         GameControl.createNewGame(FactionSurvivor.getPlayer1());
         // display the game menu
-        GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.display();
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
         //  System.out.println("*** startNewGame function called ***");
     }
 

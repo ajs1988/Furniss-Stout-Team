@@ -42,12 +42,3 @@ public enum Actor implements Serializable {
         return coordinates;
     }
 }
-
-    @Override
-    public String toString() {
-        return "Actor{" + "actor=" + actor + '}';
-    }
-
-
-
-}

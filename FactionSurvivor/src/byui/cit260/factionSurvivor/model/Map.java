@@ -32,7 +32,7 @@ public class Map implements Serializable{
         this.locations = new Location[rowCount][columnCount];
         
         for (int row = 0; row < rowCount; row++) {
-            for (int column = 0; column < columnCount; column++)
+            for (int column = 0; column < columnCount; column++) {
                 // create and initialize new Location object instance
                 Location location = new Location();
                 location.setColumn(column);
@@ -42,9 +42,8 @@ public class Map implements Serializable{
                 // assign the Location object to the current position in array
                 locations[row][column] = location;
         }
-    }
-    
-
+    }   
+}
     public int getRowCount() {
         return rowCount;
     }

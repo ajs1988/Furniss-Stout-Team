@@ -16,6 +16,15 @@ public class InventoryItem implements Serializable{
     private String inventoryType;
     private int quantityInStock;
     private int requiredAmount;
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
     private String keyItem;
 
     
