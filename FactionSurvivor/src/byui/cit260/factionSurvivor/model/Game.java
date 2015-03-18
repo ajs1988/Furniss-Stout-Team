@@ -11,14 +11,17 @@ import java.io.Serializable;
  *
  * @author Landon
  */
-public class Game implements Serializable{
+public class Game implements Serializable {
+
     private double totalTime;
-    private int numPeople;
+    private Player player;
+    private String[] actor;
+    private Map map;
+    private InventoryItem[] inventory;
 
     public Game() {
     }
-    
-    
+
     public double getTotalTime() {
         return totalTime;
     }
@@ -27,12 +30,36 @@ public class Game implements Serializable{
         this.totalTime = totalTime;
     }
 
-    public int getNumPeople() {
-        return numPeople;
+    public Player getPlayer() {
+        return player;
     }
 
-    public void setNumPeople(int numPeople) {
-        this.numPeople = numPeople;
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public String[] getActor() {
+        return actor;
+    }
+
+    public void setActor(String[] actor) {
+        this.actor = actor;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public InventoryItem[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(InventoryItem[] inventory) {
+        this.inventory = inventory;
     }
 
     @Override
@@ -65,7 +92,5 @@ public class Game implements Serializable{
         }
         return true;
     }
-    
-    
-    
+
 }

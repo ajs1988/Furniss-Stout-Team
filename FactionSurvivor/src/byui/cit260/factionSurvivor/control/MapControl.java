@@ -10,6 +10,22 @@ package byui.cit260.factionSurvivor.control;
  * @author Andy
  */
 public class MapControl {
-    
 
+    static Map createMap() {
+        //create the Map
+        Map map = new Map(25, 25);
+        
+        //create the scenes for the game
+        Scene[] scenes = createScenes();
+        
+        //assign scenes to locations
+        GameControl.assignScenesToLocations(map, scenes);
+                
+        return map;
+    }
+
+    static void moveActorsToStartingLocation(Map map) {
+        System.out.println("*** called moveActorsToStartingLocation() ***");
+
+    }
 }

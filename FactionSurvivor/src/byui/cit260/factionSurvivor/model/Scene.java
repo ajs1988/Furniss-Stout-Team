@@ -5,6 +5,7 @@
  */
 package byui.cit260.factionSurvivor.model;
 
+import factionsurvivor.FactionSurvivor;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -21,6 +22,20 @@ public class Scene implements Serializable{
     private double travelT;
         //travel time
     
+    private static Scene[] createScenes() throws MapControlException {
+        Game game = FactionSurvivor.getCurrentGame();
+        
+        Scene[] scenes = new Scene[SceneType.values().length];
+        
+       Scene startingScene = new Scene();
+       startingScene.setDescription (
+                "\n You are captured by the Candor faction and thrown in prison"
+                        + "Escape!!");
+       finishScene.setMapSymbol (" FN ");
+       finishScene.SetBlocked(false);
+       finishScene.setTravelTime(Double.POSITIVE_INFINITY);
+       scenes[SceneType.finish.ordinal()] = finishScene;
+    }
     public Scene() {
     }
 
