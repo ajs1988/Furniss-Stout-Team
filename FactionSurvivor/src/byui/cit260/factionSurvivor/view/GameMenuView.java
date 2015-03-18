@@ -5,6 +5,8 @@
  */
 package byui.cit260.factionSurvivor.view;
 
+import byui.cit260.factionSurvivor.control.GameControl;
+import byui.cit260.factionSurvivor.model.InventoryItem;
 import java.util.Scanner;
 
 /**
@@ -25,7 +27,6 @@ public class GameMenuView extends View {
             + "\nE - Exit"
             + "\n-----------------------------------");
     }
-    @Override
     public boolean doAction(Object obj){
         
         String value = (String) obj;
@@ -37,7 +38,7 @@ public class GameMenuView extends View {
                 this.displayCharMenu();
                 break;
             case 'M': // Open the coordinate entry system
-                this.moveToLocation();
+                this.displayMap();
                 break;
             case 'V': // Open the inventory to view items
                 this.viewInventory();
@@ -58,15 +59,25 @@ public class GameMenuView extends View {
         characterSelectView.display();
     }
 
-    private void moveToLocation() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void displayMap() {
+        System.out.println("*** displayMap stub function called ***");
     }
 
     private void viewInventory() {
         // get the sorted list of inventory items for the current game
         InventoryItem[] inventory = GameControl.getSortedInventoryList();
-        InventoryView inventoryView = new InventoryView();
-        inventoryView.display();
+        
+        System.out.println("\nInventory Items");
+        System.out.println("Description" + "\t" +
+                "Required" + "\t" +
+                "In Stock");
+        
+        for (InventoryItem inventoryItem : inventory) {
+            // DISPLAY the description, the required amount and amount in stock
+            System.out.println(inventoryItem.getDescription() + "\t  " +
+                               inventoryItem.getRequiredAmount() + "\t  " +
+                               inventoryItem.getQuantityInStock());
+        }
     }
 
     private void searchLocation() {

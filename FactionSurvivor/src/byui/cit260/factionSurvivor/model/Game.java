@@ -61,36 +61,4 @@ public class Game implements Serializable {
     public void setInventory(InventoryItem[] inventory) {
         this.inventory = inventory;
     }
-
-    @Override
-    public String toString() {
-        return "Game{" + "totalTime=" + totalTime + ", numPeople=" + numPeople + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.totalTime) ^ (Double.doubleToLongBits(this.totalTime) >>> 32));
-        hash = 37 * hash + this.numPeople;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Game other = (Game) obj;
-        if (Double.doubleToLongBits(this.totalTime) != Double.doubleToLongBits(other.totalTime)) {
-            return false;
-        }
-        if (this.numPeople != other.numPeople) {
-            return false;
-        }
-        return true;
-    }
-
 }

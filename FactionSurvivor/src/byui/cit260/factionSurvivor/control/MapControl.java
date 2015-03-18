@@ -5,6 +5,9 @@
  */
 package byui.cit260.factionSurvivor.control;
 
+import byui.cit260.factionSurvivor.model.Scene;
+
+
 /**
  *
  * @author Andy
@@ -23,7 +26,9 @@ public class MapControl {
                 
         return map;
     }
-
+    static void createScenes() {
+        System.out.println("*** called createScenes() ***");
+    }
     static void moveActorsToStartingLocation(Map map) {
         System.out.println("*** called moveActorsToStartingLocation() ***");
 

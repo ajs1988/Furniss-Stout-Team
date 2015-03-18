@@ -15,10 +15,6 @@ import java.util.Objects;
  */
 public enum Actor implements Serializable {
     
-    private String actor;
-    private String description;
-    private Point coordinates;
-
     EruditePrisoner ("Erudite in cell 1"),
     DauntlessPrisoner ("Dauntless in cell 1"),
     PrisonGuard ("Guard in cell 2"),
@@ -29,32 +25,6 @@ public enum Actor implements Serializable {
     DauntlessOpponent ("Fighting opponent for Dauntless challenge"),
     AbnegationLeader ("Leader of Abnegation faction"),
     ServicePeople ("People you serve in Abnegation challenge");
-
-
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Point getCoordinates() {
-        return coordinates;
-    }
-
-    public void setCoordinates(Point coordinates) {
-        this.coordinates = coordinates;
-    }
-
-    
-    
-    public Actor() {
-    }
-    
-    public String getActor() {
-        return actor;
 
     private final String description;
     private final Point coordinates;
@@ -71,13 +41,4 @@ public enum Actor implements Serializable {
     public Point getCoordinates() {
         return coordinates;
     }
-}
-
-    @Override
-    public String toString() {
-        return "Actor{" + "actor=" + actor + '}';
-    }
-
-
-
 }
