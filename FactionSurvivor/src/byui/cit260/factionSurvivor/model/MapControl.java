@@ -3,34 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.factionSurvivor.control;
+package byui.cit260.factionSurvivor.model;
 
-import byui.cit260.factionSurvivor.model.Scene;
-
+import byui.cit260.factionSurvivor.control.GameControl;
+import static byui.cit260.factionSurvivor.model.Scene.createScenes;
 
 /**
  *
  * @author Andy
  */
 public class MapControl {
-
-    public static Map createMap() throws MapControlException  {
+    public static byui.cit260.factionSurvivor.control.Map createMap() throws MapControlException  {
         //create the Map
-        Map map = new Map(25, 25);
+        byui.cit260.factionSurvivor.control.Map map = new byui.cit260.factionSurvivor.control.Map(25, 25);
         
         //create the scenes for the game
         Scene[] scenes = createScenes();
         
         //assign scenes to locations
         GameControl.assignScenesToLocations(map, scenes);
-                
+        
         return map;
     }
-    static void createScenes() {
-        System.out.println("*** called createScenes() ***");
-    }
-    static void moveActorsToStartingLocation(Map map) {
-        System.out.println("*** called moveActorsToStartingLocation() ***");
-
-    }
+    
 }

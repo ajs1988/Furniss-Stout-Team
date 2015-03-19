@@ -31,7 +31,7 @@ public class GameControl {
         game.setInventory(inventoryList);
 
         Map map = MapControl.createMap(); // create and initialize new map, mapcontrol function stil needs to be created
-        game.setMap(Map);
+        game.setMap(map);
 
         //Move actors to starting position on the map
         MapControl.moveActorsToStartingLocation(map);
