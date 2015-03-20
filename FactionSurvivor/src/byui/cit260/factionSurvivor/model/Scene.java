@@ -14,18 +14,39 @@ import java.util.Objects;
  *
  * @author Andy
  */
-public class Scene implements Serializable {
-
+public class Scene implements Serializable{
+    
     private String description;
-    //area description
+        //area description
     private int challenge;
-    //challenge in location
+        //challenge in location
     private double travelT;
         //travel time
-
+    
+    public static Scene[] createScenes() throws MapControlException {
+        Game game = FactionSurvivor.getCurrentGame();
+        
+        Scene[] scenes = new Scene[Constants.NUMBER_OF_SCENES];
+ 
+       Scene startingScene = new Scene();
+       startingScene.setDescription (
+                "\n You are captured by the Candor faction and thrown in prison"
+                        + "Escape!!");
+       scenes[sceneType.prisoncell1.ordinal()] = startingScene;
+        
+       Scene finishScene = new Scene();
+       finishScene.setDescription (
+                "\n You are captured by the Candor faction and thrown in prison"
+                        + "Escape!!");
+       scenes[sceneType.opengate.ordinal()] = finishScene;
+       
+       return scenes;
+    }
     public Scene() {
     }
 
+    
+    
     public String getDescription() {
         return description;
     }
@@ -48,10 +69,6 @@ public class Scene implements Serializable {
 
     public void setTravelT(double travelT) {
         this.travelT = travelT;
-    }
-
-    public void setMapSymbol(String _st_) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -88,5 +105,7 @@ public class Scene implements Serializable {
         }
         return true;
     }
-
+    
+    
+    
 }

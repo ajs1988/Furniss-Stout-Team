@@ -6,9 +6,9 @@
 package byui.cit260.factionSurvivor.view;
 
 import byui.cit260.factionSurvivor.control.GameControl;
-import byui.cit260.factionSurvivor.exceptions.MapControlException;
 import factionsurvivor.FactionSurvivor;
 import java.util.Scanner;
+
 
 /**
  *
@@ -16,23 +16,27 @@ import java.util.Scanner;
  */
 public class MainMenuView extends View {
 
-    public MainMenuView() {
-        super("\n"
-                + "\n-----------------------------------"
-                + "\n| Main Menu                       |"
-                + "\n-----------------------------------"
-                + "\nG - Start New Game"
-                + "\nH - How to Play"
-                + "\nC - Continue from saved game"
-                + "\nS - Save Game"
-                + "\nE - Exit"
-                + "\n-----------------------------------");
+    public MainMenuView(){
+     super("\n"
+            + "\n-----------------------------------"
+            + "\n| Main Menu                       |"
+            + "\n-----------------------------------"
+            + "\nG - Start New Game"
+            + "\nH - How to Play"
+            + "\nC - Continue from saved game"
+            + "\nS - Save Game"
+            + "\nE - Exit"
+            + "\n-----------------------------------");
     }
+    
 
-    public boolean doAction(Object obj) {
+    
 
+   @Override
+    public boolean doAction(Object obj){
+        
         String value = (String) obj;
-
+        
         value = value.toUpperCase();
         char choice = value.charAt(0);
         switch (choice) {
@@ -57,12 +61,8 @@ public class MainMenuView extends View {
     }
 
     private void startNewGame() {
-        try {
-            // create a new game
-            GameControl.createNewGame(FactionSurvivor.getPlayer1());
-        } catch (MapControlException mce) {
-            System.out.println(mce.getMessage());
-        }
+        // create a new game
+        GameControl.createNewGame(FactionSurvivor.getPlayer1());
         // display the game menu
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();

@@ -13,10 +13,9 @@ import java.util.Scanner;
  * @author Landon
  */
 public class MapView extends View {
-        public class MapView() {
-        super("Enter the row as a number 1-4, then enter a column as a number 1-4 to move to a location on the map"); 
+        public MapView() {
+        super("Enter the row as a number 0-4, then enter a column as a number 0-4 to move to a location on the map"); 
 }
-        
 @Override
 public boolean doAction(Object obj) {
 String value = (String) obj;
