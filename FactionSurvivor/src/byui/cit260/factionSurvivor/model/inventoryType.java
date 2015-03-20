@@ -9,6 +9,21 @@ package byui.cit260.factionSurvivor.model;
  *
  * @author Landon
  */
-class MapControlException extends Exception {
+public enum Item {
+        rope,
+        harness,
+        brake,
+        anchor,
+        seeds,
+        water,
+        fertilizer,
+        light,
+        shovel,
+        astones,
+        cscales,
+        ewater,
+        dflame,
+        aplant;
+        
     
 }

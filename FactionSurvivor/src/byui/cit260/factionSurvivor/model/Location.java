@@ -18,7 +18,7 @@ public class Location implements Serializable{
     private boolean explored;
     private int amountRemaining;
     private Scene scene;
-    private ArrayList<Actor> actors;
+    private ArrayList<Actor> actors = new ArrayList<>();
 
     public Scene getScene() {
         return scene;
