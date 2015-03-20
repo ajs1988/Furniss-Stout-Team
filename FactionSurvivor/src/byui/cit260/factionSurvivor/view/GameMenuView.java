@@ -7,6 +7,8 @@ package byui.cit260.factionSurvivor.view;
 
 import byui.cit260.factionSurvivor.control.GameControl;
 import byui.cit260.factionSurvivor.model.InventoryItem;
+import byui.cit260.factionSurvivor.model.Location;
+import byui.cit260.factionSurvivor.model.Map;
 import java.util.Scanner;
 
 /**
@@ -60,7 +62,8 @@ public class GameMenuView extends View {
     }
 
     private void displayMap() {
-        System.out.println("*** displayMap stub function called ***");
+        Map map = new Map();
+        Location[][] locations = map.getLocations();
     }
 
     private void viewInventory() {

@@ -5,6 +5,7 @@
  */
 package byui.cit260.factionSurvivor.control;
 
+import byui.cit260.factionSurvivor.exceptions.MapControlException;
 import byui.cit260.factionSurvivor.model.Game;
 import byui.cit260.factionSurvivor.model.InventoryItem;
 import byui.cit260.factionSurvivor.model.Item;
@@ -13,6 +14,7 @@ import byui.cit260.factionSurvivor.model.Player;
 import byui.cit260.factionSurvivor.model.Scene;
 import byui.cit260.factionSurvivor.model.sceneType;
 import factionsurvivor.FactionSurvivor;
+import byui.cit260.factionSurvivor.model.Map;
 
 /**
  *
@@ -20,7 +22,7 @@ import factionsurvivor.FactionSurvivor;
  */
 public class GameControl {
 
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player) throws MapControlException {
         Game game = new Game(); // create new game
         FactionSurvivor.setCurrentGame(game); // save in Faction Survivor
 
@@ -31,7 +33,7 @@ public class GameControl {
         game.setInventory(inventoryList);
 
         Map map = MapControl.createMap(); // create and initialize new map, mapcontrol function stil needs to be created
-        game.setMap(Map);
+        game.setMap(map);
 
         //Move actors to starting position on the map
         MapControl.moveActorsToStartingLocation(map);
@@ -128,44 +130,6 @@ public class GameControl {
         return inventory;     
     }
     
-    static void assignScenesToLocations(Map map, Scene[] scenes) {
-        Location [][] locations = map.getlocations();
-        
-        //start point
-        locations[0][0].setScene(scenes[sceneType.dauntless.ordinal()]);
-        locations[0][1].setScene(scenes[sceneType.street.ordinal()]);
-        locations[0][2].setScene(scenes[sceneType.park.ordinal()]);
-        locations[0][3].setScene(scenes[sceneType.forest.ordinal()]);
-        locations[0][4].setScene(scenes[sceneType.citygate.ordinal()]);
-        
-        locations[1][0].setScene(scenes[sceneType.street.ordinal()]);
-        locations[1][1].setScene(scenes[sceneType.prisoncell2.ordinal()]);
-        locations[1][2].setScene(scenes[sceneType.candorhq.ordinal()]);
-        locations[1][3].setScene(scenes[sceneType.prisoncell1.ordinal()]);
-        locations[1][4].setScene(scenes[sceneType.alley.ordinal()]);
-        
-        locations[2][0].setScene(scenes[sceneType.meetinghouse.ordinal()]);
-        locations[2][1].setScene(scenes[sceneType.street.ordinal()]);
-        locations[2][2].setScene(scenes[sceneType.erudite.ordinal()]);
-        locations[2][3].setScene(scenes[sceneType.busstop.ordinal()]);
-        locations[2][4].setScene(scenes[sceneType.park.ordinal()]);
-        
-        locations[3][0].setScene(scenes[sceneType.trainstation.ordinal()]);
-        locations[3][1].setScene(scenes[sceneType.alley.ordinal()]);
-        locations[3][2].setScene(scenes[sceneType.house.ordinal()]);
-        locations[3][3].setScene(scenes[sceneType.street.ordinal()]);
-        locations[3][4].setScene(scenes[sceneType.abnegation.ordinal()]);
-        
-        locations[4][0].setScene(scenes[sceneType.forest.ordinal()]);
-        locations[4][1].setScene(scenes[sceneType.street.ordinal()]);
-        locations[4][2].setScene(scenes[sceneType.amity.ordinal()]);
-        locations[4][3].setScene(scenes[sceneType.house.ordinal()]);
-        locations[4][4].setScene(scenes[sceneType.meetinghouse.ordinal()]);
-
-        
-        
-        
-    }
     public static InventoryItem[] getSortedInventoryList() {
         // get inventory list for the current game
         InventoryItem[] originalInventoryList =
