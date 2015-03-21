@@ -9,10 +9,7 @@ import byui.cit260.factionSurvivor.exceptions.MapControlException;
 import byui.cit260.factionSurvivor.model.Game;
 import byui.cit260.factionSurvivor.model.InventoryItem;
 import byui.cit260.factionSurvivor.model.Item;
-import byui.cit260.factionSurvivor.model.Location;
 import byui.cit260.factionSurvivor.model.Player;
-import byui.cit260.factionSurvivor.model.Scene;
-import byui.cit260.factionSurvivor.model.sceneType;
 import factionsurvivor.FactionSurvivor;
 import byui.cit260.factionSurvivor.model.Map;
 

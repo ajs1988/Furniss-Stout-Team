@@ -17,5 +17,5 @@ public class Cell1Control {
         else {
             return 1;
         }
-}
+}   // needs more code to be complete.. ie talk to correct person before escape..
 }

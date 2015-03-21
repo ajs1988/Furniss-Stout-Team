@@ -19,11 +19,11 @@ public enum Item {
         fertilizer,
         light,
         shovel,
-        astones,
-        cscales,
-        ewater,
-        dflame,
-        aplant;
+        astones, // key item
+        cscales, // key item
+        ewater, // key item
+        dflame, // key item
+        aplant; // key item
         
     
 }
