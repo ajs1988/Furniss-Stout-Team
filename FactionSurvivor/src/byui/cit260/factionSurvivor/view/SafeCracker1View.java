@@ -5,6 +5,8 @@
  */
 package byui.cit260.factionSurvivor.view;
 
+import byui.cit260.factionSurvivor.control.SafeCrackerControl;
+
 /**
  *
  * @author Andy
@@ -25,7 +27,12 @@ public class SafeCracker1View extends View {
     }
     @Override
     public boolean doAction(Object obj){
-        
+        try {
+            SafeCrackerControl.calc1(); //attempt at try catch 
+        }
+        catch {
+            SafeCrackerException(sce.getmessage());
+        }
         String value = (String) obj;
         
         value = value.toUpperCase();
@@ -44,6 +51,5 @@ public class SafeCracker1View extends View {
 }
 
     private void displayAnswer() {
-        System.out.println("*** displayTris() string ***");
-    }
+}
 }
