@@ -6,6 +6,7 @@
 package byui.cit260.factionSurvivor.view;
 
 import byui.cit260.factionSurvivor.control.SafeCrackerControl;
+import byui.cit260.factionSurvivor.exceptions.SafeCrackerException;
 
 /**
  *
@@ -28,10 +29,10 @@ public class SafeCracker1View extends View {
     @Override
     public boolean doAction(Object obj){
         try {
-            SafeCrackerControl.calc1(); //attempt at try catch 
+            SafeCrackerControl.calc1(5, 11, 9); //attempt at try catch 
         }
-        catch {
-            SafeCrackerException(sce.getmessage());
+        catch (SafeCrackerException sce) {
+            System.out.println(sce.getMessage());
         }
         String value = (String) obj;
         
