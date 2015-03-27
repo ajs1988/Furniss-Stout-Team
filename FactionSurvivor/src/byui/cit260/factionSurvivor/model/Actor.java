@@ -15,16 +15,14 @@ import java.util.Objects;
  */
 public enum Actor implements Serializable {
     
-    EruditePrisoner ("Erudite in cell 1", 0,0),
-    DauntlessPrisoner ("Dauntless in cell 1", 0,0),
-    PrisonGuard ("Guard in cell 2", 0,0),
-    Jeremy ("Amity member", 0,0),
-    Cassie ("Amity member", 0,0),
-    Billy ("Amity child", 0,0),
+    EruditePrisoner ("Erudite in cell 1", 1,3),
+    DauntlessPrisoner ("Dauntless in cell 1", 1,3),
+    PrisonGuard ("Guard in cell 2", 1,1),
+    Jeremy ("Amity member", 4,2),
+    Cassie ("Amity member", 4,2),
     DauntlessMembers ("The Dauntless group of people", 0,0),
-    DauntlessOpponent ("Fighting opponent for Dauntless challenge", 0,0),
-    AbnegationLeader ("Leader of Abnegation faction", 0,0),
-    ServicePeople ("People you serve in Abnegation challenge", 0,0);
+    AbnegationLeader ("Leader of Abnegation faction", 3,4),
+    ServicePeople ("People you serve in Abnegation challenge", 3,4);
 
     private final String description;
     private final Point coordinates;

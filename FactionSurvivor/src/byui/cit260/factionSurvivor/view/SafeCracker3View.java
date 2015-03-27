@@ -28,12 +28,17 @@ public class SafeCracker3View extends View {
     }
     @Override
     public boolean doAction(Object obj){
+
         try {
             SafeCrackerControl.clac3(10);
         }
         catch(SafeCrackerException sce) {
             System.out.println(sce.getMessage());
         }
+
+        
+        
+
         String value = (String) obj;
         
         value = value.toUpperCase();

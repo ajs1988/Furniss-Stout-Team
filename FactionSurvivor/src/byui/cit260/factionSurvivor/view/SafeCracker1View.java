@@ -29,7 +29,7 @@ public class SafeCracker1View extends View {
     @Override
     public boolean doAction(Object obj){
         try {
-            SafeCrackerControl.calc1(5, 11, 9); //attempt at try catch 
+            SafeCrackerControl.calc1(5, 11, 9); //attempt a try catch 
         }
         catch (SafeCrackerException sce) {
             System.out.println(sce.getMessage());
