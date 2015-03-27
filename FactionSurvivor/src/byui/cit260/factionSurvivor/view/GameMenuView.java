@@ -62,27 +62,35 @@ public class GameMenuView extends View {
     }
 
     private void displayMap() {
+        
         Map map = new Map();
         Location[][] locations = map.getLocations();
-        /* Title New Gettysburg
-        ("\n"
-            + "\n-----------------------------------"
-            + "\n|Welcome to New Gettysburg        |"
-            + "\n-----------------------------------"
-            + "\n    |  1 |  2 |  3 |  4 |  5 |          "
-            + "\n-----------------------------------"
-            + "\n 1  | ?? | ?? | ?? | ?? | ?? |
-            + "\n-----------------------------------"
-            + "\n 2  | ?? | ?? | ?? | ST | ?? |
-            + "\n-----------------------------------"
-            + "\n 3  | ?? | ?? | ?? | ?? | ?? |
-            + "\n-----------------------------------"
-            + "\n 4  | ?? | ?? | ?? | ?? | ?? |
-            + "\n-----------------------------------"
-            + "\n 5  | ?? | ?? | ?? | ?? | ?? |
-            + "\n-----------------------------------")
         
-        */
+        System.out.println( "---------------------------------------"
+                            +"\n      Welcome to New Gettysburg       "
+                            +"\n--------------------------------------"
+                            +"\n     |  1 |  2 |  3 |  4 |  5 |");
+        
+        for (int row = 0; row < 5; row++) {
+            System.out.println("-----------------------------------");
+            System.out.println(row);
+            for (int column = 0; column < 5; column++) {
+                // create and initialize new Location object instance
+                System.out.println(" | ");
+                 // assign the Location object to the current position in array
+                Location location = new location();
+                locations[row][column] = location;
+                    
+                    if (Location.getExplored() == true) {
+                        
+                    }
+                   else { 
+                        System.out.println("??");
+                    }
+                    System.out.println(" |");
+            }
+        }
+        System.out.println("-----------------------------------");
     }
 
     private void viewInventory() {
