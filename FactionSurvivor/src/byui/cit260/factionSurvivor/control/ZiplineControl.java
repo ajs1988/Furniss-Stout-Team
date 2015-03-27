@@ -11,8 +11,8 @@ import byui.cit260.factionSurvivor.exceptions.ZiplineControlException;
  *
  * @author Andy
  */
-public class ZiplineControl throws ZiplineControlException {
-    public boolean zipLine(int harness, int rope, int brake, int anchor){
+public class ZiplineControl {
+    public static boolean zipLine(int harness, int rope, int brake, int anchor) throws ZiplineControlException{
 
         if (harness != 1 || rope != 1 || brake != 1 || anchor != 1) {
             throw new ZiplineControlException("You are missing 1 or more required items.");

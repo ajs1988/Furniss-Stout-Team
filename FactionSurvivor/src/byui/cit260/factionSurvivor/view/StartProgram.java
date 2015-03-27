@@ -13,9 +13,11 @@ import java.util.Scanner;
  *
  * @author Andy
  */
-public class StartProgram {
+public class StartProgram extends View {
 
-    public StartProgram() {
+    public StartProgram(String promptMessage) {
+        super(promptMessage);
+        this.displayBanner();
     }
 
     public void startProgram1() {
@@ -25,15 +27,6 @@ public class StartProgram {
         //prompt the player to enter their name and Retrieve the name for the player
         String playerName = this.getPlayerName();
 
-        //Create and save the player object
-        Player player1 = ProgramControl.createPlayer(playerName);
-
-        //Display a personalized welcome message
-        this.displayWelcomeMessage(player1);
-
-        //Display the Main Menu.
-        MainMenuView mainMenu = new MainMenuView();
-        mainMenu.display();
     }
 
     private void displayBanner() {
@@ -63,6 +56,9 @@ public class StartProgram {
                 + "\n* see just how good you really are!        *");
 
         System.out.println("***********************************************");
+        
+        
+        System.out.println("Enter your name");
     }
 
     public String getPlayerName() {
@@ -96,6 +92,22 @@ public class StartProgram {
         System.out.println("\tWe hope you have a lot of fun!");
         System.out.println("============================================");
 
+    }
+
+    @Override
+    public boolean doAction(Object obj) {
+        String playerName = (String)obj;
+        //Create and save the player object
+        Player player1 = ProgramControl.createPlayer(playerName);
+
+        //Display a personalized welcome message
+        this.displayWelcomeMessage(player1);
+
+        //Display the Main Menu.
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.display();
+        
+        return false;
     }
 
 }

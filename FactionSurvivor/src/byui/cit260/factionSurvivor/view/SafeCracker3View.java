@@ -26,6 +26,7 @@ public class SafeCracker3View extends View {
     @Override
     public boolean doAction(Object obj){
         
+        
         String value = (String) obj;
         
         value = value.toUpperCase();

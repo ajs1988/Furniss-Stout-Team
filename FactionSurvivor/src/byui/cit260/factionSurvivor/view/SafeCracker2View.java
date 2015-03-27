@@ -5,6 +5,10 @@
  */
 package byui.cit260.factionSurvivor.view;
 
+import byui.cit260.factionSurvivor.control.SafeCrackerControl;
+import byui.cit260.factionSurvivor.exceptions.SafeCrackerException;
+import java.util.Scanner;
+
 /**
  *
  * @author Andy
@@ -23,9 +27,39 @@ public class SafeCracker2View extends View {
             +"\n----------------------------------------");
        
     }
+    public Double getDoubleNumber() {
+            Double number = null;
+            
+            while (number==null) {
+                String value = this.getInput();
+                value= value.trim().toUpperCase();
+                
+                if (value.equals("E"))
+                    break;
+                try {
+                //parse and convert number from text to a double
+                number = Double.parseDouble(value);
+                }
+                catch (NumberFormatException nf) {
+                    System.out.println("\nYou must enter a valid number."
+                    +" Try again or enter E to exit.");
+                }
+                    }
+            return number;
+        }
     @Override
     public boolean doAction(Object obj){
         
+        
+         System.out.println("Please enter your answer with one decimal place.");
+        String userinput=getInput();
+        double number= Double.parseDouble(userinput);
+        try {
+            SafeCrackerControl.clac2(number);
+        }
+        catch (SafeCrackerException sce) {
+            System.out.println(sce.getMessage());
+        }
         String value = (String) obj;
         
         value = value.toUpperCase();

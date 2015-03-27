@@ -19,6 +19,7 @@ import byui.cit260.factionSurvivor.model.Scene;
 import byui.cit260.factionSurvivor.model.Service;
 import byui.cit260.factionSurvivor.model.Zipline;
 import byui.cit260.factionSurvivor.view.StartProgram;
+import byui.cit260.factionSurvivor.view.View;
 
 /**
  *
@@ -50,14 +51,21 @@ public class FactionSurvivor {
      */
     public static void main(String[] args) {
         //start program view
-
-        StartProgram startProgram = new StartProgram();
+        StartProgram startProgram = new StartProgram("");
         startProgram.startProgram1();
+        
+        try {
+            startProgram.display();
+        }
+        catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgram.display();
+        }
 
         //connections to other model layer sections
         Player player1 = new Player();
         Game game = new Game();
-        Actor actor = new Actor();
         Map map = new Map();
         Location location = new Location();
         InventoryItem inventory = new InventoryItem();
@@ -75,16 +83,13 @@ public class FactionSurvivor {
         player1.setInventItem("bullet");
 
         game.setTotalTime(5.00);
-        game.setNumPeople(6);
-
-        actor.setActor("Farmer");
 
         map.setColumnCount(2);
         map.setRowCount(4);
 
         location.setRow(3);
         location.setColumn(1);
-        location.setExplored(3);
+        location.setExplored(false);
         location.setAmountRemaining(2);
 
         inventory.setInventoryType("survival");
@@ -113,7 +118,7 @@ public class FactionSurvivor {
         growIt.setChat3(3);
         growIt.setPlantGrow(4);
 
-        scene.setDescript("lost Area");
+        scene.setDescription("lost Area");
         scene.setChallenge(6);
         scene.setTravelT(7.00);
 
@@ -127,9 +132,6 @@ public class FactionSurvivor {
 
         String gameInfo = game.toString();
         System.out.println(gameInfo);
-
-        String actorInfo = actor.toString();
-        System.out.println(actorInfo);
 
         String mapInfo = map.toString();
         System.out.println(mapInfo);
@@ -185,5 +187,4 @@ public class FactionSurvivor {
         }
         return inventoryList;
     }
-    public static 
 }
