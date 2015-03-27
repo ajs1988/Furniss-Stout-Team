@@ -22,6 +22,7 @@ public class Scene implements Serializable {
     //challenge in location
     private double travelT;
         //travel time
+    private String mapSymbol;
 
     public Scene() {
     }
@@ -50,9 +51,14 @@ public class Scene implements Serializable {
         this.travelT = travelT;
     }
 
-    public void setMapSymbol(String _st_) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getMapSymbol() {
+        return mapSymbol;
     }
+
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
+    }
+    
 
     @Override
     public String toString() {
