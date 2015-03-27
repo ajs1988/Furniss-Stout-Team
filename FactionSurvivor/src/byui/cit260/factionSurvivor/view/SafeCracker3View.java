@@ -38,7 +38,6 @@ public class SafeCracker3View extends View {
 
         
         
-
         String value = (String) obj;
         
         value = value.toUpperCase();
