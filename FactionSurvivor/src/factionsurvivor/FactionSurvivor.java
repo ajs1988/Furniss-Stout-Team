@@ -22,6 +22,7 @@ import byui.cit260.factionSurvivor.view.StartProgram;
 import byui.cit260.factionSurvivor.view.View;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
 /**
  *
@@ -124,7 +125,7 @@ public class FactionSurvivor {
         StartProgram startProgram = new StartProgram("");
 
         startProgram.startProgram1();
-        
+         
         try {
             startProgram.display();
         }
