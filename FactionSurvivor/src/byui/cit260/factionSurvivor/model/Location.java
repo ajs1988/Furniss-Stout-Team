@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Location implements Serializable{
     private int row;
     private int column;
-    private boolean explored;
+    private static boolean explored;
     private int amountRemaining;
     private Scene scene;
     private ArrayList<Actor> actors = new ArrayList<>();
@@ -54,7 +54,7 @@ public class Location implements Serializable{
         this.column = column;
     }
 
-    public boolean getExplored() {
+    public static boolean getExplored() {
         return explored;
     }
 
