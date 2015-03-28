@@ -21,7 +21,11 @@ import byui.cit260.factionSurvivor.model.Zipline;
 import byui.cit260.factionSurvivor.view.StartProgram;
 import byui.cit260.factionSurvivor.view.View;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -36,7 +40,61 @@ public class FactionSurvivor {
     private static BufferedReader inFile = null;
 
     private static PrintWriter logFile = null;
-    
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        try {
+            //open character stream files for end user input and output
+            FactorSurvivor.inFile = new BufferedReader(new InputStreamReader(System.in));
+
+            FactorSurvivor.outFile = new PrintWriter(System.out, true);
+
+            String filePath = "log.txt";
+            FactionSurvivor.logFile = new PrintWriter(filePath);
+
+        } catch (exception e) {
+            System.out.println(":Exception: " + e.toString() + "\n Cause: " + e.getCause() + "\nMessge: " + e.getMessage());
+        } finally {
+
+            try {
+                if (FactionSurvivor.inFile != null) {
+                    FactionSurvivor.inFile.close();
+                }
+
+                if (FactionSurvivor.outFile != null) {
+                    FactionSurvivor.outFile.close();
+                }
+
+                if (FactionSurvivor.logFile != null) {
+                    FactionSurvivor.outFile.close();
+                }
+
+            } catch (IOException ex) {
+                System.out.println("Error closing files");
+                return;
+            }
+
+        }
+
+//start program view
+        //start program view
+        StartProgram startProgram = new StartProgram("");
+
+        startProgram.startProgram1();
+
+        try {
+            startProgram.display();
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgram.display();
+        }
+
+        //connections to other model layer sections
+    }
+
     public static PrintWriter getOutFile() {
         return outFile;
     }
@@ -60,9 +118,7 @@ public class FactionSurvivor {
     public static void setLogFile(PrintWriter logFile) {
         FactionSurvivor.logFile = logFile;
     }
-    
-    
-    
+
     public static Game getCurrentGame() {
         return currentGame;
     }
@@ -78,63 +134,4 @@ public class FactionSurvivor {
     public static void setPlayer1(Player player1) {
         FactionSurvivor.player1 = player1;
     }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        try {
-            //open character stream files for end user input and output
-            FactorSurvivor.inFile = new BufferedReader(new InputStreamReader(System.in));
-            
-            FactorSurvivor.outFile = new PrintWriter(System.out, true);
-        
-            String filePath = "log.txt";
-            FactionSurvivor.logFile = new PrintWriter(filePath);
-        
-        }
-        catch (exception e){
-            System.out.println(":Exception: " + e.toString() + "\n Cause: " + e.getCause() + "\nMessge: " + e.getMessage());
-        }
-        finally{
-            try {
-                if (FactionSurvivor.inFile != null)
-                    FactionSurvivor.inFile.close();
-                
-                if (FactionSurvivor.outFile != null)
-                    FactionSurvivor.outFile.close();
-                
-                if (FactionSurvivor.logFile != null)
-                    FactionSurvivor.outFile.close();
-            }
-            catch (IOException ex) {
-                //page 5
-                System.out.println("Error closing files");
-                return;
-            }
-            
-        }
-        
-
-//start program view
-
-        
-
-        //start program view
-        StartProgram startProgram = new StartProgram("");
-
-        startProgram.startProgram1();
-        
-        try {
-            startProgram.display();
-        }
-        catch (Throwable te) {
-            System.out.println(te.getMessage());
-            te.printStackTrace();
-            startProgram.display();
-        }
-
-        //connections to other model layer sections
-        
-}
 }

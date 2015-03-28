@@ -15,13 +15,15 @@ import java.io.PrintWriter;
 public class ErrorView {
     
     private static final PrintWriter errorFile = FactionSurvivor.getOutFile();
+    private static final PrintWriter logFile = FactionSurvivor.getLogFile();
     
     public static void display(String className, String errorMessage) {
         
         errorFile.println(
             "--------------------------------------------------------------"
-           +"\n- ERROR - " errorMessage
-           +"\n------------------------------------------------------------");
+                    + "\n- ERROR - " + errorMessage
+                    + "\n---------------------------------------------------------");
+           
     
          // Log Error
         logFile.println(className + " - " + errorMessage);

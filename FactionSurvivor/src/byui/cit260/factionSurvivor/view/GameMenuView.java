@@ -72,7 +72,7 @@ public class GameMenuView extends View {
                             +"\n     |  1 |  2 |  3 |  4 |  5 |");
         
         for (int row = 0; row < 5; row++) {
-            System.out.println("-----------------------------------");
+            System.out.println("\n-----------------------------------");
             System.out.println(row);
             for (int column = 0; column < 5; column++) {
                 // create and initialize new Location object instance
@@ -82,7 +82,8 @@ public class GameMenuView extends View {
                 locations[row][column] = location;
                     
                     if (Location.getExplored() == true) {
-                        
+                        //place arrayname[row][column] in parenthesis
+                        System.out.println(locations[row][column]);
                     }
                    else { 
                         System.out.println("??");
