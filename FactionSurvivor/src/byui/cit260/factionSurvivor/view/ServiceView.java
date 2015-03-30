@@ -5,6 +5,9 @@
  */
 package byui.cit260.factionSurvivor.view;
 
+import byui.cit260.factionSurvivor.control.ServiceControl;
+import byui.cit260.factionSurvivor.exceptions.ServiceException;
+
 /**
  *
  * @author Andy
@@ -27,6 +30,16 @@ public class ServiceView extends View {
     }
     @Override
     public boolean doAction(Object obj){
+        try{
+            ServiceControl.serviceFood(1,1,224,1344);
+        }
+        catch (ServiceException se){
+            System.out.println(se.getMessage());
+        }
+        
+        
+        
+        
         
         String value = (String) obj;
         
@@ -35,6 +48,7 @@ public class ServiceView extends View {
         switch (choice) {
             case 'J': // Show character selection Tris
                 this.displayJohnny();
+                
                 break;
             case 'S': // Show Character Selection Four
                 this.displaySarah();

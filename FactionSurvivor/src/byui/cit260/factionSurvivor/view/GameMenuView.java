@@ -76,11 +76,11 @@ public class GameMenuView extends View {
             System.out.println(row);
             for (int column = 0; column < 5; column++) {
                 // create and initialize new Location object instance
+                System.out.println(column +1);
                 System.out.println(" | ");
                  // assign the Location object to the current position in array
-                Location location = new location();
-                locations[row][column] = location;
-                    
+                Location location = locations [row][column]; 
+                
                     if (Location.getExplored() == true) {
                         //place arrayname[row][column] in parenthesis
                         System.out.println(locations[row][column]);
