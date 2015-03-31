@@ -7,7 +7,6 @@ package byui.cit260.factionSurvivor.view;
 
 import byui.cit260.factionSurvivor.model.ProgramControl;
 import byui.cit260.factionSurvivor.model.Player;
-import java.util.Scanner;
 
 /**
  *

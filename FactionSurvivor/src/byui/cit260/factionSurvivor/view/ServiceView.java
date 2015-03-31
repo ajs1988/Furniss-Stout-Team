@@ -13,46 +13,61 @@ import byui.cit260.factionSurvivor.exceptions.ServiceException;
  * @author Andy
  */
 public class ServiceView extends View {
-    public ServiceView(){
+    /*ServiceControl person1 = new ServiceControl();
+     person1.getPer1();
+     ServiceControl person2 = new ServiceControl();
+     person2.getPer2();
+     */
+
+    public ServiceView() {
         super("\n"
-            +"\n----------------------------------------"
-            +"\n| Service Challenge                    |"
-            +"\n----------------------------------------"
-            +"\nQuestion................................"
-            +"\n........................................"
-            +"\n........................................"
-            +"\n........................................"
-            +"\nJ - Talk to Johnny"
-            +"\nS - Talk to Sarah"
-            +"\nE - Exit to Main Menu"
-            +"\n----------------------------------------");
-       
+                + "\n----------------------------------------"
+                + "\n| Service Challenge                    |"
+                + "\n----------------------------------------"
+                + "\nQuestion................................"
+                + "\n........................................"
+                + "\n........................................"
+                + "\n........................................"
+                + "\nJ - Talk to Johnny"
+                + "\nS - Talk to Sarah"
+                + "\nA - Give Answer"
+                + "\nE - Exit to Main Menu"
+                + "\n----------------------------------------");
+
     }
+
     @Override
-    public boolean doAction(Object obj){
-        try{
-            ServiceControl.serviceFood(1,1,224,1344);
-        }
-        catch (ServiceException se){
+    public boolean doAction(Object obj) {
+        try {
+            ServiceControl.serviceFood(1, 1, 2, 1345);
+        } catch (ServiceException se) {
             System.out.println(se.getMessage());
         }
-        
-        
-        
-        
-        
+
+        String value2 = (String) obj;
         String value = (String) obj;
         
+            int number = Integer.parseInt(value2);
+            if (number != 1344) {
+                System.out.println("That is Incorrect!");
+            }
+            if (number == 1344) {
+                System.out.println("That is Correct!");
+            }
+        
+            System.out.println("you must enter in a valid number"
+                    + "or select E to exit.");
+        
+
         value = value.toUpperCase();
         char choice = value.charAt(0);
         switch (choice) {
             case 'J': // Show character selection Tris
                 this.displayJohnny();
-                
                 break;
             case 'S': // Show Character Selection Four
                 this.displaySarah();
-                break;            
+                break;
             case 'E': // Exit to previous menu
                 return true;
             default:
@@ -60,13 +75,13 @@ public class ServiceView extends View {
                 break;
         }
         return false;
-}
+    }
 
     private void displayJohnny() {
-        System.out.println("*** displayTris() string ***");
+        System.out.println("*** displayJohnny() string ***");
     }
 
     private void displaySarah() {
-        System.out.println("*** displayTris() string ***");
+        System.out.println("*** displaySarah() string ***");
     }
 }

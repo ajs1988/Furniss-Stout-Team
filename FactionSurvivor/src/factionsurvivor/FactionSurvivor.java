@@ -5,27 +5,13 @@
  */
 package factionsurvivor;
 
-import byui.cit260.factionSurvivor.model.Actor;
 import byui.cit260.factionSurvivor.model.Game;
-import byui.cit260.factionSurvivor.model.GrowIt;
-import byui.cit260.factionSurvivor.model.InventoryItem;
-import byui.cit260.factionSurvivor.model.Location;
-import byui.cit260.factionSurvivor.model.Map;
 import byui.cit260.factionSurvivor.model.Player;
-import byui.cit260.factionSurvivor.model.PrisonCell;
-import byui.cit260.factionSurvivor.model.RegularScene;
-import byui.cit260.factionSurvivor.model.Safe_Cracker;
-import byui.cit260.factionSurvivor.model.Scene;
-import byui.cit260.factionSurvivor.model.Service;
-import byui.cit260.factionSurvivor.model.Zipline;
 import byui.cit260.factionSurvivor.view.StartProgram;
-import byui.cit260.factionSurvivor.view.View;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
