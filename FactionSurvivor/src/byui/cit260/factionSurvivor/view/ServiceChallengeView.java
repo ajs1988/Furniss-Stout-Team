@@ -50,22 +50,22 @@ public class ServiceChallengeView extends View {
             case 'E': // Exit to previous menu
                 return;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
 
     }
 
     private void talkTom() {
-        System.out.println("*** you talked to Tom ***");
+        this.console.println("*** you talked to Tom ***");
     }
 
     private void talkAnna() {
-        System.out.println("*** you talked to Anna ***");
+        this.console.println("*** you talked to Anna ***");
     }
 
     private void talkJohn() {
-        System.out.println("*** you talked to John ***");
+        this.console.println("*** you talked to John ***");
     }
 
     private void talkLeader() {
@@ -73,7 +73,7 @@ public class ServiceChallengeView extends View {
     }
 
     private void saveGame() {
-        System.out.println("*** saveGame function called ***");
+        this.console.println("*** saveGame function called ***");
     }
 
     @Override

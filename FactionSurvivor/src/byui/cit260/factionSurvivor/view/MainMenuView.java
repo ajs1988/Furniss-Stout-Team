@@ -50,7 +50,7 @@ public class MainMenuView extends View {
             case 'E': // Exit the program
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
@@ -61,7 +61,8 @@ public class MainMenuView extends View {
             // create a new game
             GameControl.createNewGame(FactionSurvivor.getPlayer1());
         } catch (MapControlException mce) {
-            System.out.println(mce.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " +mce.getMessage());
         }
         // display the game menu
         GameMenuView gameMenu = new GameMenuView();
@@ -76,11 +77,11 @@ public class MainMenuView extends View {
     }
 
     private void startExistingGame() {
-        System.out.println("*** saveGame function called ***");
+        this.console.println("*** saveGame function called ***");
     }
 
     private void saveGame() {
-        System.out.println("*** displayHelpMenu function called ***");
+        this.console.println("*** displayHelpMenu function called ***");
     }
 
 }

@@ -32,7 +32,8 @@ public class SafeCracker1View extends View {
             SafeCrackerControl.calc1(5, 11, 9); //attempt a try catch 
         }
         catch (SafeCrackerException sce) {
-            System.out.println(sce.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + sce.getMessage());
         }
         String value = (String) obj;
         
@@ -45,7 +46,7 @@ public class SafeCracker1View extends View {
             case 'E': // Exit to previous menu
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;

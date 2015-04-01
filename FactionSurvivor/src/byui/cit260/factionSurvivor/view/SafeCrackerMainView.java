@@ -47,25 +47,25 @@ public class SafeCrackerMainView extends View {
             case 'E': // Exit to previous menu
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
 }
 
     private void displayFirst() {
-        System.out.println("*** displayTris() string ***");
+        this.console.println("*** displayTris() string ***");
     }
 
     private void displaySecond() {
-        System.out.println("*** displayTris() string ***");
+        this.console.println("*** displayTris() string ***");
     }
 
     private void displayThird() {
-        System.out.println("*** displayTris() string ***");
+        this.console.println("*** displayTris() string ***");
     }
 
     private void displayCrackSafe() {
-        System.out.println("*** displayTris() string ***");
+        this.console.println("*** displayTris() string ***");
     }
 }

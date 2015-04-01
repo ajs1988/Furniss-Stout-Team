@@ -53,29 +53,29 @@ public class CharacterSelectView extends View {
             case 'E': // Exit to previous menu
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
 }
 
     private void displayTris() {
-        System.out.println("*** displayTris() string ***");    }
+        this.console.println("*** displayTris() string ***");    }
             
     private void displayFour() {
-        System.out.println("*** displayFour() string ***");
+        this.console.println("*** displayFour() string ***");
     }
 
     private void displayChristina() {
-        System.out.println("*** displayChristina() string ***");
+        this.console.println("*** displayChristina() string ***");
     }
 
     private void displayEric() {
-        System.out.println("*** displayEric() string ***");
+        this.console.println("*** displayEric() string ***");
     }
 
     private void displayNatalie() {
-        System.out.println("*** displayNatalie() string ***");
+        this.console.println("*** displayNatalie() string ***");
     }
        
 }

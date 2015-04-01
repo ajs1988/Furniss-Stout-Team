@@ -33,7 +33,8 @@ public class SafeCracker3View extends View {
             SafeCrackerControl.clac3(10);
         }
         catch(SafeCrackerException sce) {
-            System.out.println(sce.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + sce.getMessage());
         }
 
         
@@ -49,13 +50,13 @@ public class SafeCracker3View extends View {
             case 'E': // Exit to previous menu
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
 }
 
     private void displayAnswer() {
-       System.out.println("*** displayTris() string ***");
+       this.console.println("*** displayTris() string ***");
     }
 }

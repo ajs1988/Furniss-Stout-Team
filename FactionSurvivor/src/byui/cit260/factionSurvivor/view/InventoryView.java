@@ -87,64 +87,64 @@ public class InventoryView extends View {
             case 'E': // Exit to previous menu
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
 }
 
     private void displayRope() {
-        System.out.println("*** thick line or cord made to support a person ***");
+        this.console.println("*** thick line or cord made to support a person ***");
     }
 
     private void displayHarness() {
-        System.out.println("*** Personal device to secure a person to a rope ***");
+        this.console.println("*** Personal device to secure a person to a rope ***");
     }
 
     private void displayBrake() {
-        System.out.println("*** Device used to stop a person while in a zipline ***");
+        this.console.println("*** Device used to stop a person while in a zipline ***");
     }
 
     private void displayAnchors() {
-        System.out.println("*** Hooks or devices used to secure rope for use ***");
+        this.console.println("*** Hooks or devices used to secure rope for use ***");
     }
 
     private void displaySeeds() {
-        System.out.println("*** What plant will they grow into? ***");
+        this.console.println("*** What plant will they grow into? ***");
     }
     private void displayWater() {
-        System.out.println("*** Liquid of life for many things ***");
+        this.console.println("*** Liquid of life for many things ***");
     }
 
     private void displayFertilizer() {
-        System.out.println("*** It stinks but plants love it ***");
+        this.console.println("*** It stinks but plants love it ***");
     }
 
     private void displayLight() {
-        System.out.println("*** A UV light almost as good as the sun ***");
+        this.console.println("*** A UV light almost as good as the sun ***");
     }
 
     private void displayShovel() {
-        System.out.println("*** Dig, Dig, Dig, but you aren't in a mine. yet... ***");
+        this.console.println("*** Dig, Dig, Dig, but you aren't in a mine. yet... ***");
     }
 
     private void displayAbnega() {
-        System.out.println("*** Ornate stones used to choose the Abnegation as your faction.***");
+        this.console.println("*** Ornate stones used to choose the Abnegation as your faction.***");
     }
 
     private void displayCondor() {
-        System.out.println("*** The scales used to choose Condor as your faction***");
+        this.console.println("*** The scales used to choose Condor as your faction***");
     }
 
     private void displayErudite() {
-        System.out.println("*** Pure water used to choose Erudite as your faction. ***");
+        this.console.println("*** Pure water used to choose Erudite as your faction. ***");
     }
 
     private void displayDaunt() {
-        System.out.println("*** Flames frommthe coals used in choosing dauntless as your faction. ***");
+        this.console.println("*** Flames frommthe coals used in choosing dauntless as your faction. ***");
     }
 
     private void displayAmity() {
-        System.out.println("*** Amity plant used in choosing Amity as your faction ***");
+        this.console.println("*** Amity plant used in choosing Amity as your faction ***");
     }
 }

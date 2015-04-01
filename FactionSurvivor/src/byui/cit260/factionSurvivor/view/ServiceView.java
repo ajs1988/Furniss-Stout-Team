@@ -42,17 +42,17 @@ public class ServiceView extends View {
             case 'E': // Exit to previous menu
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
 }
 
     private void displayJohnny() {
-        System.out.println("*** displayTris() string ***");
+        this.console.println("*** displayTris() string ***");
     }
 
     private void displaySarah() {
-        System.out.println("*** displayTris() string ***");
+        this.console.println("*** displayTris() string ***");
     }
 }

@@ -48,25 +48,25 @@ public class HelpMenuView extends View {
             case 'E': // Exit to main menu
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
     }
 
     private void displayGoal() {
-        System.out.println("*** displayGoal() string ***");
+        this.console.println("*** displayGoal() string ***");
     }
 
     private void displayMoveInstruct() {
-        System.out.println("*** displayMoveInstruct() string ***");
+        this.console.println("*** displayMoveInstruct() string ***");
     }
 
     private void displayListKey() {
-        System.out.println("*** displayListKey() string ***");
+        this.console.println("*** displayListKey() string ***");
     }
 
     private void displayInventoryHelp() {
-        System.out.println("*** displayInventoryHelp() string ***");
+        this.console.println("*** displayInventoryHelp() string ***");
     }
 }

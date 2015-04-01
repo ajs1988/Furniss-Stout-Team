@@ -30,9 +30,9 @@ public class StartProgram extends View {
     }
 
     private void displayBanner() {
-        System.out.println("\n\n*******************************************");
+        this.console.println("\n\n*******************************************");
 
-        System.out.println("*                                         *"
+        this.console.println("*                                         *"
                 + "\n*             Faction Survivor             *"
                 + "\n* This is a game made for an escape        *"
                 + "\n* In this game you are an outsider dropped *"
@@ -40,7 +40,7 @@ public class StartProgram extends View {
                 + "\n* need to get out so that you can return to*"
                 + "\n* your real home.                          *");
 
-        System.out.println("*                                         *"
+        this.console.println("*                                         *"
                 + "\n* You will travel the map of the city      *"
                 + "\n* looking for a way to escape and get out  *"
                 + "\n* and away from the factions. Collect items*"
@@ -51,14 +51,14 @@ public class StartProgram extends View {
                 + "\n* Work hard and work fast and you just     *"
                 + "\n* might make it out alive.                 *");
 
-        System.out.println("*                                             *"
+        this.console.println("*                                             *"
                 + "\n* Good luck to you my friend and we shall  *"
                 + "\n* see just how good you really are!        *");
 
-        System.out.println("***********************************************");
+        this.console.println("***********************************************");
         
         
-        System.out.println("Enter your name");
+        this.console.println("Enter your name");
     }
 
     public String getPlayerName() {
@@ -69,15 +69,15 @@ public class StartProgram extends View {
         while (!valid) {//while a valid name has not been retrieved
 
             // prompt for the player's name
-            System.out.println("Enter the player's name below:");
+            this.console.println("Enter the player's name below:");
 
             //get the name from the keyboard and trim off the blanks
-            playersName = this.keyboard.readLine();
+            playersName = this.keyboard.readLine(); // wants a try... catch statment or a throws statement all ReadLine() methods do this
             playersName = playersName.trim();
 
             //if the name is invalid (less than two character in length)
             if (playersName.length() < 2) {
-                System.out.println("Invalid name - the name must not be blank");
+                this.console.println("Invalid name - the name must not be blank");
                 continue; //and report again
 
             }
@@ -87,10 +87,10 @@ public class StartProgram extends View {
     }
 
     public void displayWelcomeMessage(Player player1) {
-        System.out.println("\n\n========================================");
-        System.out.println("\tWelcome to the game " + player1.getName());
-        System.out.println("\tWe hope you have a lot of fun!");
-        System.out.println("============================================");
+        this.console.println("\n\n========================================");
+        this.console.println("\tWelcome to the game " + player1.getName());
+        this.console.println("\tWe hope you have a lot of fun!");
+        this.console.println("============================================");
 
     }
 

@@ -61,4 +61,5 @@ public class Game implements Serializable {
     public void setInventory(InventoryItem[] inventory) {
         this.inventory = inventory;
     }
+    
 }

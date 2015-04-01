@@ -49,14 +49,14 @@ public class AmityView extends View {
 }
 
     private void displayJeremy() {
-         System.out.println("*** displayTris() string ***");
+         this.console.println("*** displayTris() string ***");
     }
 
     private void displayCassie() {
-         System.out.println("*** displayTris() string ***");
+         this.console.println("*** displayTris() string ***");
     }
 
     private void displayGrowPlant() {
-         System.out.println("*** displayTris() string ***");
+         this.console.println("*** displayTris() string ***");
     }
 }

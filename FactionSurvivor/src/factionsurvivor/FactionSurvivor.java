@@ -50,12 +50,13 @@ public class FactionSurvivor {
             FactorSurvivor.inFile = new BufferedReader(new InputStreamReader(System.in));
 
             FactorSurvivor.outFile = new PrintWriter(System.out, true);
-
+                                                    //System.out may need to be changed to this.console
             String filePath = "log.txt";
             FactionSurvivor.logFile = new PrintWriter(filePath);
 
-        } catch (exception e) {
+        } catch (Exception e) {
             System.out.println(":Exception: " + e.toString() + "\n Cause: " + e.getCause() + "\nMessge: " + e.getMessage());
+            // may need to change and call errormessage view display 
         } finally {
 
             try {
@@ -73,7 +74,7 @@ public class FactionSurvivor {
 
             } catch (IOException ex) {
                 System.out.println("Error closing files");
-                return;
+                return; // may need to change to display ErrorView.display() method
             }
 
         }
@@ -87,8 +88,8 @@ public class FactionSurvivor {
         try {
             startProgram.display();
         } catch (Throwable te) {
-            System.out.println(te.getMessage());
-            te.printStackTrace();
+            System.out.println(te.getMessage()); // may need to use ErrorView.display
+            te.printStackTrace();               // Gets static error when i try to use ErrorView display
             startProgram.display();
         }
 

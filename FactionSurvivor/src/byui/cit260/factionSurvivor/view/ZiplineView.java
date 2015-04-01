@@ -31,7 +31,8 @@ public class ZiplineView extends View {
             ZiplineControl.zipLine(1, 1, 1, 1); //attempt a try catch 
         } 
         catch (ZiplineControlException zce) {
-            System.out.println(zce.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "Error reading input: " + zce.getMessage());
         }
         String value = (String) obj;
 
@@ -44,7 +45,7 @@ public class ZiplineView extends View {
             case 'E': // Exit to previous menu
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;

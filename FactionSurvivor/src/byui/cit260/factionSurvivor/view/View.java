@@ -34,7 +34,7 @@ public abstract class View implements ViewInterface {
         
         do {
 
-            System.out.println(this.promptMessage); // display the main menu
+            this.console.println(this.promptMessage); // display the main menu
             
                 value = this.getInput(); // get the user's selection
             
@@ -53,14 +53,14 @@ public abstract class View implements ViewInterface {
         while (!valid) {//while a valid name has not been retrieved
 
             // prompt for the player's name
-            System.out.println("\t\nEnter selection below:");
+            this.console.println("\t\nEnter selection below:");
 
             //get the name from the keyboard and trim off the blanks
             selection = this.keyboard.readLine();
             selection = selection.trim();
 
             if (selection.length() < 1) {
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 continue;
             }
             break;

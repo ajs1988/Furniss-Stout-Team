@@ -6,9 +6,13 @@
 package byui.cit260.factionSurvivor.view;
 
 import byui.cit260.factionSurvivor.control.GameControl;
+import byui.cit260.factionSurvivor.control.MapControl;
+import byui.cit260.factionSurvivor.model.Game;
 import byui.cit260.factionSurvivor.model.InventoryItem;
 import byui.cit260.factionSurvivor.model.Location;
 import byui.cit260.factionSurvivor.model.Map;
+import byui.cit260.factionSurvivor.model.Scene;
+import factionsurvivor.FactionSurvivor;
 import java.util.Scanner;
 
 /**
@@ -50,7 +54,7 @@ public class GameMenuView extends View {
             case 'E': // Exit to main menu
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
@@ -63,49 +67,50 @@ public class GameMenuView extends View {
 
     private void displayMap() {
         
-        Map map = new Map();
+        Game game = FactionSurvivor.getCurrentGame();
+        Map map = game.getMap();
         Location[][] locations = map.getLocations();
         
-        System.out.println( "---------------------------------------"
+        this.console.println( "---------------------------------------"
                             +"\n      Welcome to New Gettysburg       "
                             +"\n--------------------------------------"
                             +"\n     |  1 |  2 |  3 |  4 |  5 |");
         
         for (int row = 0; row < 5; row++) {
-            System.out.println("\n-----------------------------------");
-            System.out.println(row);
+            this.console.println("\n-----------------------------------");
+            this.console.println(row);
             for (int column = 0; column < 5; column++) {
                 // create and initialize new Location object instance
-                System.out.println(" | ");
+                this.console.println(" | ");
                  // assign the Location object to the current position in array
-                Location location = new location();
-                locations[row][column] = location;
+                Location location = locations[row][column];
+                Scene scene = location.getScene();
+                String mapsymbol= scene.getMapSymbol();
                     
                     if (Location.getExplored() == true) {
-                        //place arrayname[row][column] in parenthesis
-                        System.out.println(locations[row][column]);
+                        this.console.println(mapsymbol);
                     }
                    else { 
-                        System.out.println("??");
+                        this.console.println("??");
                     }
-                    System.out.println(" |");
+                    this.console.println(" |");
             }
         }
-        System.out.println("-----------------------------------");
+        this.console.println("-----------------------------------");
     }
 
     private void viewInventory() {
         // get the sorted list of inventory items for the current game
         InventoryItem[] inventory = GameControl.getSortedInventoryList();
         
-        System.out.println("\nInventory Items");
-        System.out.println("Description" + "\t" +
+        this.console.println("\nInventory Items");
+        this.console.println("Description" + "\t" +
                 "Required" + "\t" +
                 "In Stock");
         
         for (InventoryItem inventoryItem : inventory) {
             // DISPLAY the description, the required amount and amount in stock
-            System.out.println(inventoryItem.getDescription() + "\t  " +
+            this.console.println(inventoryItem.getDescription() + "\t  " +
                                inventoryItem.getRequiredAmount() + "\t  " +
                                inventoryItem.getQuantityInStock());
         }
