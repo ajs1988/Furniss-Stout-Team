@@ -5,6 +5,9 @@
  */
 package byui.cit260.factionSurvivor.view;
 
+import factionsurvivor.FactionSurvivor;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -14,6 +17,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
     
     private String promptMessage;
+    
+    protected final BufferedReader keyboard = FactionSurvivor.getInFile();
+    protected final PrintWriter console = FactionSurvivor.getOutFile();
   
     public View(String promptMessage) {
         
@@ -42,7 +48,7 @@ public abstract class View implements ViewInterface {
      public String getInput() {
         boolean valid = false; //indicates if the name has been retrived
         String selection = null;
-        Scanner keyboard = new Scanner(System.in); //keyboard input stream
+         //keyboard input stream
 
         while (!valid) {//while a valid name has not been retrieved
 
@@ -50,7 +56,7 @@ public abstract class View implements ViewInterface {
             System.out.println("\t\nEnter selection below:");
 
             //get the name from the keyboard and trim off the blanks
-            selection = keyboard.nextLine();
+            selection = this.keyboard.readLine();
             selection = selection.trim();
 
             if (selection.length() < 1) {

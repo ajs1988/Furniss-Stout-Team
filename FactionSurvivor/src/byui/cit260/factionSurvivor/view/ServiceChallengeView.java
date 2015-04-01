@@ -11,59 +11,29 @@ import java.util.Scanner;
  *
  * @author Andy
  */
-public class ServiceChallengeView {
-    private final String MENU = "\n"
-            +"\n----------------------------------------"
-            +"\n| Service Challenge                  |"
-            +"\n----------------------------------------"
-            +"\nT - Talk to Tom"
-            +"\nA - Talk to Anna"
-            +"\nJ - Talk to John"
-            +"\nL - Talk to Leader"
-            +"\nS - Save Game"            
-            +"\nE - Exit to Previous Menu"
-            +"\n----------------------------------------";
-       void displayServiceMenu() {
-        char selection = ' ';
-        do {
-            
-            System.out.println(MENU); // display the main menu
-            
-            String input = this.getInput(); // get the user's selection
-            selection = input.charAt(0); // get first character of string
-            
-            this.doAction(selection); // do action based on selection
-            
-        } while (selection != 'E'); // a selection is not "Exit"
-    }
-        public String getInput() {
-        boolean valid = false; //indicates if the name has been retrived
-        String userInput = null;
-        Scanner keyboard = new Scanner(System.in); //keyboard input stream
-        
-        while (!valid) {//while a valid name has not been retrieved
-            
-            // prompt for the Player's input
-            System.out.println("Enter input:");
-            
-            //get the input from the keyboard and trim off the blanks
-            userInput = keyboard.nextLine();
-            userInput = userInput.trim();
-            
-        if (userInput.length() < 1 ) {
-            System.out.println("Please enter a value");
-                continue;
-            }
-            break;
-        }
-        return userInput;
+public class ServiceChallengeView extends View {
 
+    public ServiceChallengeView() {
+        super ("\n"
+                + "\n----------------------------------------"
+                + "\n| Service Challenge                  |"
+                + "\n----------------------------------------"
+                + "\nT - Talk to Tom"
+                + "\nA - Talk to Anna"
+                + "\nJ - Talk to John"
+                + "\nL - Talk to Leader"
+                + "\nS - Save Game"
+                + "\nE - Exit to Previous Menu"
+                + "\n----------------------------------------");
     }
-        public void doAction(char choice) {
+
+    
+
+    public void doAction(char choice) {
         switch (choice) {
             case 'T': // Show character selection Tris
                 this.talkTom();
-                
+
                 break;
             case 'A': // Show Character Selection Four
                 this.talkAnna();
@@ -75,16 +45,16 @@ public class ServiceChallengeView {
                 this.talkLeader();
                 break;
             case 'S': // Show Character Selection Natalie
-                this.saveGame();             
-            
+                this.saveGame();
+
             case 'E': // Exit to previous menu
                 return;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
-        
-}
+
+    }
 
     private void talkTom() {
         System.out.println("*** you talked to Tom ***");
@@ -99,11 +69,15 @@ public class ServiceChallengeView {
     }
 
     private void talkLeader() {
-        
-        
+
     }
 
     private void saveGame() {
         System.out.println("*** saveGame function called ***");
+    }
+
+    @Override
+    public boolean doAction(Object obj) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
