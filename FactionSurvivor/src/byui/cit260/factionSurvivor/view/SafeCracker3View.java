@@ -46,6 +46,7 @@ public class SafeCracker3View extends View {
         switch (choice) {
             case 'A': // Show character selection Tris
                 this.displayAnswer();
+                
                 break;
             case 'E': // Exit to previous menu
                 return true;

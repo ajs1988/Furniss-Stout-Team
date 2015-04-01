@@ -5,32 +5,72 @@
  */
 package byui.cit260.factionSurvivor.control;
 
+import byui.cit260.factionSurvivor.exceptions.ServiceException;
+
 /**
  *
  * @author Andy
  */
 public class ServiceControl {
+
     int ans = 6;
+    public int per1 = 0;
+    public int per2 = 0;
+    public int daunt = 224;
     
-    public boolean serviceFood(int per1, int per2, int per3, int daunt, int factLess){
-        if (daunt < 224 || daunt > 224){
-            return false;
+    
+    public static boolean serviceFood(int per1, int per2, int daunt, int factLess) throws ServiceException {
+
+        if (daunt < 224 || daunt > 224) {
+            throw new ServiceException("The number of Dauntless is incorrect.");
         }
         if (factLess < 1344 || factLess > 1344) {
-            return false;
+            throw new ServiceException("The number of Factionless is incorrect.");
         }
         
-        if (per1 == 1 && per2 == 1 && per3 == 1){
+        if (per1 == 1 && per2 == 1) {
             int da1 = 7 * 32;
-            int fa1 = da1 * 6;
             
-            return daunt == da1 && factLess == fa1;
-            
-            
-        }
-        else {
-            return false;}
-                
-               
+
+            return daunt == da1;
+
+        } 
+        throw new ServiceException("Please enter a valid answer");
+
     }
+
+    public int getAns() {
+        return ans;
+    }
+
+    public void setAns(int ans) {
+        this.ans = ans;
+    }
+
+    public int getPer1() {
+        return per1;
+    }
+
+    public void setPer1(int per1) {
+        this.per1 = per1;
+    }
+
+    public int getPer2() {
+        return per2;
+    }
+
+    public void setPer2(int per2) {
+        this.per2 = per2;
+    }
+
+    public int getDaunt() {
+        return daunt;
+    }
+
+    public void setDaunt(int daunt) {
+        this.daunt = daunt;
+    }
+
+    
+    
 }
