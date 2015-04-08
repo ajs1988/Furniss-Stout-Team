@@ -7,6 +7,7 @@ package byui.cit260.factionSurvivor.view;
 
 import byui.cit260.factionSurvivor.model.ProgramControl;
 import byui.cit260.factionSurvivor.model.Player;
+import java.io.IOException;
 
 /**
  *
@@ -19,7 +20,7 @@ public class StartProgram extends View {
         this.displayBanner();
     }
 
-    public void startProgram1() {
+    public void startProgram1() throws IOException {
         //display the banner screen
         this.displayBanner();
 
@@ -60,7 +61,7 @@ public class StartProgram extends View {
         this.console.println("Enter your name");
     }
 
-    public String getPlayerName() {
+    public String getPlayerName() throws IOException {
         boolean valid = false; //indicates if the name has been retrived
         String playersName = null;
          //keyboard input stream

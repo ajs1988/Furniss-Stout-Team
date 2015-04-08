@@ -81,7 +81,15 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-        this.console.println("*** displayHelpMenu function called ***");
+        System.out.println("\n\nEnter the file path for file where the game"
+                + "is to be saved");
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.saveGame(FactionSurvivor.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.diplay("MainMenuView", ex.getMessage());
+        }
     }
 
 }

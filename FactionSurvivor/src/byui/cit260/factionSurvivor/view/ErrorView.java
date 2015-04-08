@@ -29,5 +29,9 @@ public class ErrorView {
         logFile.println(className + " - " + errorMessage);
     
     }
+
+    static void diplay(String mainMenuView, String message) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
